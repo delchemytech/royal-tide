@@ -1,0 +1,416 @@
+{
+  "company": {
+    "name": "Royal Tide General Trading LLC SPC",
+    "shortName": "Royal Tide",
+    "domain": "royaltides.ae",
+    "copyright": "© 2026 Royal Tide General Trading LLC SPC. All rights reserved."
+  },
+  "contact": {
+    "emailInfo": "info@royaltides.ae",
+    "emailSales": "sales@royaltides.ae",
+    "phoneDisplay": "[TELEPHONE NUMBER]",
+    "phoneHref": "",
+    "whatsappNumber": "",
+    "whatsappDisplay": "[WHATSAPP NUMBER]",
+    "whatsappMessage": "Hi Royal Tide, I would like to inquire about your hospitality collections.",
+    "location": "United Arab Emirates",
+    "addressDisplay": "[UAE OFFICE ADDRESS]",
+    "hours": "Sunday – Thursday, [OPENING HOURS]"
+  },
+  "nav": [
+    { "label": "Home", "to": "/" },
+    { "label": "Collections", "to": "/collections" },
+    { "label": "Contact Us", "to": "/contact" }
+  ],
+  "home": {
+    "seoTitle": "Royal Tide General Trading LLC SPC | Hospitality Supplies UAE",
+    "seoDescription": "Royal Tide General Trading LLC SPC supplies commercial-grade tableware, cutlery, glassware and bed & bath linen to hotels, restaurants and catering operations across the UAE.",
+    "hero": {
+      "eyebrow": "Hospitality Supply · United Arab Emirates",
+      "headline": "A Premier UAE Supplier of",
+      "headlineAccent": "Hospitality Operating Supplies.",
+      "subline": "Commercial-grade tableware, cutlery, glassware and bed & bath linen for hotels, restaurants, resorts and catering operations across the region.",
+      "primaryCta": "View Collections",
+      "secondaryCta": "Contact Sales"
+    },
+    "about": {
+      "eyebrow": "About Us",
+      "title": "Built Around Hospitality Procurement",
+      "paragraphs": [
+        "Royal Tide General Trading LLC SPC is a United Arab Emirates general trading company supplying operating equipment and supplies to the hospitality sector.",
+        "The company is licensed and registered as a General Trading LLC SPC in the UAE, and trades under that licence for the import and supply of commercial hospitality goods.",
+        "Our focus is a curated, commercial-grade range — tableware, cutlery, glassware and bed & bath linen — specified for the realities of daily service, industrial washing and guest-facing presentation."
+      ],
+      "missionTitle": "Our Mission",
+      "mission": "To make hospitality procurement straightforward: a focused range of dependable, presentation-ready supplies, sourced and delivered for regional hotels, restaurants and catering operations."
+    },
+    "categoriesSection": {
+      "eyebrow": "Collections",
+      "title": "Four Core Product Verticals",
+      "intro": "The front and back-of-house essentials hospitality properties specify and reorder most."
+    },
+    "trust": {
+      "eyebrow": "Why Choose Us",
+      "title": "A Supply Partner for Commercial Service",
+      "points": [
+        {
+          "title": "Commercial Durability",
+          "text": "Specifications chosen for heavy rotation, industrial dishwashing and laundry cycles."
+        },
+        {
+          "title": "Bulk Regional Supply",
+          "text": "Volume supply for multi-outlet properties, banquets and catering operations."
+        },
+        {
+          "title": "Rapid UAE Delivery",
+          "text": "Coordinated deliveries to hospitality clients across the Emirates."
+        },
+        {
+          "title": "Tailored Sourcing",
+          "text": "Specific catalogue items and customised procurement handled on request."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "What We Do",
+      "title": "Hospitality Solutions & Services",
+      "intro": "Beyond the collections, Royal Tide supports hospitality operations through four core services.",
+      "items": [
+        {
+          "title": "Hotel & Resort Supply",
+          "text": "Front and back-of-house operating supplies for guest rooms, restaurants, bars and banquet facilities."
+        },
+        {
+          "title": "Restaurant & Catering Programs",
+          "text": "Tableware, flatware and glassware programs sized for single outlets, chains and catering operations."
+        },
+        {
+          "title": "Bulk & Contract Supply",
+          "text": "Volume procurement with coordinated delivery scheduling across properties in the Emirates."
+        },
+        {
+          "title": "Custom Sourcing",
+          "text": "Sourcing of specific catalogue items, finishes and specifications on request, with product options and supply timelines."
+        }
+      ]
+    }
+  },
+  "categoryCards": [
+    {
+      "id": "tableware",
+      "name": "Tableware & Dining",
+      "description": "Vitrified porcelain plates, bowls, cups and 18/10 stainless steel flatware.",
+      "image": "tableware",
+      "alt": "White porcelain plates and bowls arranged on a restaurant table",
+      "href": "/collections/tableware",
+      "productCount": 8
+    },
+    {
+      "id": "glassware",
+      "name": "Glassware & Barware",
+      "description": "Heavy-base tumblers, goblets, stemware, carafes and shot glasses.",
+      "image": "glassware",
+      "alt": "Crystal tumblers and wine glasses set on a hotel bar table",
+      "href": "/collections/glassware",
+      "productCount": 7
+    },
+    {
+      "id": "linen",
+      "name": "Bed & Bath Linen",
+      "description": "300TC satin stripe bed linen and 600 GSM ring-spun cotton toweling.",
+      "image": "linen",
+      "alt": "Hotel bedroom with crisp white bed linen and folded towels",
+      "href": "/collections/linen",
+      "productCount": 8
+    },
+    {
+      "id": "buffet",
+      "name": "Buffet & Service",
+      "description": "Chafing dishes, GN pans, beverage dispensers and tabletop service accessories.",
+      "image": "buffet",
+      "alt": "Stainless steel chafing dishes and buffet service equipment",
+      "href": "/collections/buffet",
+      "productCount": 6
+    }
+  ],
+  "catalog": {
+    "tableware": {
+      "id": "tableware",
+      "title": "Tableware & Dining Essentials",
+      "subtitle": "Commercial Porcelain & 18/10 Flatware",
+      "description": "High-alumina vitrified porcelain and heavy-gauge 18/10 stainless steel flatware specified for the rigors of daily commercial hospitality service.",
+      "heroImage": "https://images.unsplash.com/photo-1615801368940-275d278453ab?q=80&w=1920&auto=format&fit=crop",
+      "products": [
+        {
+          "name": "Porcelain Dinner Plate",
+          "specs": "27 cm / 10.5\", Vitrified, Chip-resistant rolled rim",
+          "reason": "Main banquet plate; reinforced rim survives daily commercial dishwashers.",
+          "image": "https://images.unsplash.com/photo-1603199506016-5d54ebfb0616?q=80&w=800&auto=format&fit=crop",
+          "alt": "White vitrified porcelain dinner plate"
+        },
+        {
+          "name": "Porcelain Side / Bread Plate",
+          "specs": "16 cm / 6.5\", Super White Vitrified Porcelain",
+          "reason": "Essential for standard table place settings (bread, salads) across dining halls.",
+          "image": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=800&auto=format&fit=crop",
+          "alt": "Small white porcelain side plate"
+        },
+        {
+          "name": "Coupe Soup & Pasta Bowl",
+          "specs": "23 cm, Wide-rim, Deep well plating",
+          "reason": "Modern hospitality standard for sauced pastas, risottos, and soups without spillage.",
+          "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=800&auto=format&fit=crop",
+          "alt": "Deep white coupe soup bowl"
+        },
+        {
+          "name": "Cereal & Dessert Bowl",
+          "specs": "14 cm, Commercial Vitrified Ceramic",
+          "reason": "Standard requirement for breakfast buffets, room-service cereal, and desserts.",
+          "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=800&auto=format&fit=crop",
+          "alt": "White ceramic cereal bowl"
+        },
+        {
+          "name": "Coffee Cup & Saucer Set",
+          "specs": "Vitrified Ceramic, High heat retention, with Saucer",
+          "reason": "High turnover item across hotel lounges, restaurants, meeting rooms, and cafes.",
+          "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?q=80&w=800&auto=format&fit=crop",
+          "alt": "White coffee cup and saucer set"
+        },
+        {
+          "name": "18/10 Dinner Fork & Knife",
+          "specs": "Heavy-gauge 18/10 Stainless Steel, Mirror Polish",
+          "reason": "Commercial flatware standard; 10% nickel content prevents corrosion and rust.",
+          "image": "https://images.unsplash.com/photo-1606041011872-5965904620f4?q=80&w=800&auto=format&fit=crop",
+          "alt": "Mirror polished stainless steel fork and knife"
+        },
+        {
+          "name": "18/10 Table & Soup Spoon",
+          "specs": "Heavy-gauge 18/10 Stainless Steel, 3.5mm thickness",
+          "reason": "Heavy-duty build does not bend under catering use.",
+          "image": "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=800&auto=format&fit=crop",
+          "alt": "Heavy gauge stainless steel table spoons"
+        },
+        {
+          "name": "18/10 Dessert & Tea Spoon",
+          "specs": "18/10 Stainless Steel, Mirror Polish",
+          "reason": "High-volume item required for room-service trays, tea setups, and dessert courses.",
+          "image": "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?q=80&w=800&auto=format&fit=crop",
+          "alt": "Small mirror polished tea spoons"
+        }
+      ]
+    },
+    "glassware": {
+      "id": "glassware",
+      "title": "Glassware & Barware",
+      "subtitle": "Commercial Bar & Dining Glass",
+      "description": "Soda-lime and crystal glassware engineered for racking, high-turnover bar service, and banquet operations.",
+      "heroImage": "https://images.unsplash.com/photo-1510007551065-224422e57207?q=80&w=1920&auto=format&fit=crop",
+      "products": [
+        {
+          "name": "Heavy-Base Water Tumbler",
+          "specs": "300 ml / 10 oz, Soda-Lime Glass",
+          "reason": "Universal dining glass; weighted base prevents accidental tipping on tables.",
+          "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed514?q=80&w=800&auto=format&fit=crop",
+          "alt": "Heavy base water tumbler glass"
+        },
+        {
+          "name": "Highball Beverage Glass",
+          "specs": "350 ml / 12 oz, Cold-cut rim tall glass",
+          "reason": "Standard bar/dining requirement for juices, mocktails, and soft drinks.",
+          "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop",
+          "alt": "Tall highball glass with beverage"
+        },
+        {
+          "name": "One-Piece Stem Water Goblet",
+          "specs": "350 ml, Monobloc drawn stem construction",
+          "reason": "Banquet table centerpiece; one-piece stem minimizes snapping in commercial racks.",
+          "image": "https://images.unsplash.com/photo-1574710607068-4850aaa8e1ce?q=80&w=800&auto=format&fit=crop",
+          "alt": "Crystal stem water goblet"
+        },
+        {
+          "name": "Universal Wine Glass",
+          "specs": "320 ml / 11 oz, All-purpose red/white bowl",
+          "reason": "Versatile bowl allows venues to streamline their stemware procurement.",
+          "image": "https://images.unsplash.com/photo-1474722883778-792e7990302f?q=80&w=800&auto=format&fit=crop",
+          "alt": "Universal wine glass"
+        },
+        {
+          "name": "Glass Water Carafe",
+          "specs": "1.0 Liter, Flared pouring spout, Weighted bottom",
+          "reason": "Tabletop standard for conference meeting rooms, buffets, and casual dining.",
+          "image": "https://images.unsplash.com/photo-1559839914-17aae19cec71?q=80&w=800&auto=format&fit=crop",
+          "alt": "Glass water carafe"
+        },
+        {
+          "name": "Heavy Shot Glass",
+          "specs": "50 ml / 1.7 oz, Solid base",
+          "reason": "Durable barware essential for bar counters and catering welcome shooters.",
+          "image": "https://images.unsplash.com/photo-1524671019370-cf06de849b76?q=80&w=800&auto=format&fit=crop",
+          "alt": "Heavy base shot glass"
+        },
+        {
+          "name": "Champagne Flute",
+          "specs": "190 ml, Slender banquet flute",
+          "reason": "Mandatory for event celebrations, banquet packages, and brunch welcome drinks.",
+          "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop",
+          "alt": "Champagne flute glass"
+        }
+      ]
+    },
+    "linen": {
+      "id": "linen",
+      "title": "Bed & Bath Linen",
+      "subtitle": "Hotel-Grade Cotton Linen & Toweling",
+      "description": "300TC long-staple cotton bed linen and 500–800 GSM ring-spun toweling with the tensile strength required for industrial laundry cycles.",
+      "heroImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1920&auto=format&fit=crop",
+      "products": [
+        {
+          "name": "300 TC Satin Stripe Bed Sheet",
+          "specs": "100% Long-Staple Cotton, 1cm Satin Stripe",
+          "reason": "The standard look for 4- & 5-star hotels; high tensile strength for industrial laundry.",
+          "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
+          "alt": "White satin stripe hotel bed sheet"
+        },
+        {
+          "name": "300 TC Satin Stripe Fitted Sheet",
+          "specs": "100% Cotton, Elasticated commercial border",
+          "reason": "Speeds up housekeeping bed turns and ensures a tight, wrinkle-free mattress fit.",
+          "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=800&auto=format&fit=crop",
+          "alt": "White fitted bed sheet on hotel mattress"
+        },
+        {
+          "name": "Satin Stripe Pillowcases",
+          "specs": "Set of 2, Envelope closure",
+          "reason": "Clean hotel aesthetic without plastic buttons or zippers that crack in presses.",
+          "image": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=800&auto=format&fit=crop",
+          "alt": "White satin stripe hotel pillowcases"
+        },
+        {
+          "name": "Quilted Duvet Insert",
+          "specs": "350 GSM Siliconized Microfiber, Box-stitched",
+          "reason": "Channel quilting keeps filling evenly distributed through high-spin wash cycles.",
+          "image": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop",
+          "alt": "White quilted duvet on hotel bed"
+        },
+        {
+          "name": "Plush Bath Towel",
+          "specs": "70 x 140 cm, 600 GSM, Ring-Spun Cotton",
+          "reason": "High absorbency and plush feel; double-lock stitched hems prevent edge fraying.",
+          "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stack of plush white bath towels"
+        },
+        {
+          "name": "Hand Towel",
+          "specs": "50 x 90 cm, 550 GSM, 100% Cotton",
+          "reason": "Standard vanity sink placement in guest rooms and public hotel restrooms.",
+          "image": "https://images.unsplash.com/photo-1600369672770-985fd30004eb?q=80&w=800&auto=format&fit=crop",
+          "alt": "White cotton hand towel"
+        },
+        {
+          "name": "Face Washcloths",
+          "specs": "30 x 30 cm, 500 GSM, Soft Terry",
+          "reason": "High-consumption guest vanity amenity placed in all commercial guest rooms.",
+          "image": "https://images.unsplash.com/photo-1585412459212-4de531709bdc?q=80&w=800&auto=format&fit=crop",
+          "alt": "Soft terry face washcloths"
+        },
+        {
+          "name": "Heavy Ribbed Bath Mat",
+          "specs": "50 x 80 cm, 800 GSM, Anti-slip weave",
+          "reason": "High-density construction ensures maximum floor water absorption and slip safety.",
+          "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop",
+          "alt": "Heavy ribbed white bath mat"
+        }
+      ]
+    },
+    "buffet": {
+      "id": "buffet",
+      "title": "Buffet & Service Accessories",
+      "subtitle": "Commercial Buffet Equipment & Tabletop Accessories",
+      "description": "Stainless steel chafing dishes, GN food pans, beverage dispensers and tabletop service accessories for buffets, banquets, and conference setups.",
+      "heroImage": "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1920&auto=format&fit=crop",
+      "products": [
+        {
+          "name": "Roll-Top Chafing Dish",
+          "specs": "9 Liter / GN 1/1, Hydraulic Soft-Close",
+          "reason": "Flagship fixture for buffets; soft-close lid stops loud clatter during guest service.",
+          "image": "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stainless steel roll-top chafing dish"
+        },
+        {
+          "name": "Stainless Steel GN Food Pans",
+          "specs": "GN 1/1 & 1/2 sizes, 65mm & 100mm depths",
+          "reason": "Universal sizing standard for warmers, commercial ovens, and catering transport.",
+          "image": "https://images.unsplash.com/photo-1588644525273-f37b60d78512?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stainless steel gastronorm food pans"
+        },
+        {
+          "name": "Buffet Serving Tongs & Spoons",
+          "specs": "18/10 Stainless Steel, Solid one-piece build",
+          "reason": "Bend-proof, hygienic tools that are simple to sanitize during long food shifts.",
+          "image": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stainless steel buffet serving tongs"
+        },
+        {
+          "name": "Hot Beverage Dispenser",
+          "specs": "10 Liter, Double-wall insulated urn",
+          "reason": "Essential for conference break stations, banquet tea/coffee, and catering setups.",
+          "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+          "alt": "Insulated hot beverage dispenser urn"
+        },
+        {
+          "name": "Juice & Cereal Dispenser",
+          "specs": "Clear Acrylic Chambers, Countertop stand",
+          "reason": "Clean, sanitary self-service solution for commercial breakfast buffets.",
+          "image": "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?q=80&w=800&auto=format&fit=crop",
+          "alt": "Clear acrylic juice dispenser"
+        },
+        {
+          "name": "Salt & Pepper Shaker Set",
+          "specs": "Commercial Glass Body with Stainless Steel Top",
+          "reason": "Universal tabletop dining requirement for banquets, cafes, and room-service trays.",
+          "image": "https://images.unsplash.com/photo-1526434426615-1abe81efcb0b?q=80&w=800&auto=format&fit=crop",
+          "alt": "Glass salt and pepper shaker set"
+        }
+      ]
+    }
+  },
+  "collections": {
+    "seoTitle": "Collections | Royal Tide General Trading LLC SPC",
+    "seoDescription": "Explore Royal Tide's hospitality collections: fine tableware and bone china, 18/10 cutlery and flatware, commercial glassware, hotel-grade bed & bath linen, and buffet service accessories.",
+    "banner": {
+      "eyebrow": "Product Catalog",
+      "title": "Commercial-Grade Hospitality Operating Supplies",
+      "intro": "29 curated products across four core verticals — specified for commercial durability, guest-facing presentation, and the realities of daily hospitality service."
+    },
+    "sourcingBanner": {
+      "title": "Looking for customized procurement or specific catalog items?",
+      "text": "Send us your requirement and our sourcing team will respond with availability and options.",
+      "cta": "Inquire on WhatsApp"
+    }
+  },
+  "contactPage": {
+    "seoTitle": "Contact Us | Royal Tide General Trading LLC SPC",
+    "seoDescription": "Contact Royal Tide General Trading LLC SPC for hospitality supply enquiries and RFQs. Email info@royaltides.ae or sales@royaltides.ae, or chat with our team on WhatsApp.",
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Talk to Our Sourcing Team",
+      "intro": "Share your requirement and we will respond with product options, specifications and supply timelines."
+    },
+    "form": {
+      "title": "Inquiry / RFQ",
+      "intro": "Complete the form and our team will get back to you.",
+      "categories": [
+        "Tableware & Dining Essentials",
+        "Glassware & Barware",
+        "Bed & Bath Linen",
+        "Buffet & Service Accessories",
+        "Multiple / Other"
+      ],
+      "success": "Thank you — your enquiry has been recorded. Our team will be in touch."
+    },
+    "mapCard": {
+      "title": "UAE Operations",
+      "text": "Royal Tide General Trading LLC SPC operates from the United Arab Emirates, supplying hospitality clients across the Emirates."
+    }
+  }
+}
