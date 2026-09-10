@@ -60,17 +60,19 @@ export function Footer() {
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Mail size={16} className="mt-0.5 shrink-0 text-gold" />
               <span className="flex flex-col gap-1">
-                <a className="hover:text-gold transition-colors" href={`mailto:${contact.emailInfo}`}>
-                  {contact.emailInfo}
-                </a>
-                <a className="hover:text-gold transition-colors" href={`mailto:${contact.emailSales}`}>
-                  {contact.emailSales}
-                </a>
+              <a className="hover:text-gold transition-colors" href={`https://mail.google.com/mail/?view=cm&to=${contact.emailInfo}`} target="_blank" rel="noreferrer">
+                {contact.emailInfo}
+              </a>
+              <a className="hover:text-gold transition-colors" href={`https://mail.google.com/mail/?view=cm&to=${contact.emailSales}`} target="_blank" rel="noreferrer">
+                {contact.emailSales}
+              </a>
               </span>
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{contact.phoneDisplay}</span>
+              <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
+                {contact.phoneDisplay}
+              </a>
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
@@ -84,6 +86,17 @@ export function Footer() {
         <div className="container-rt flex flex-col items-start justify-between gap-3 py-6 sm:flex-row sm:items-center">
           <p className="text-xs text-muted-foreground/60">{company.copyright}</p>
           <p className="text-xs text-muted-foreground/60">{company.domain}</p>
+          <p className="text-xs text-muted-foreground/60">
+            Built by{" "}
+            <a
+              href="https://delchemytech.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            >
+              DelchemyTech
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -139,7 +139,7 @@ export default function HomePage() {
                         <h4 className="font-semibold text-navy-deep text-[0.85rem]">
                           {feature.title}
                         </h4>
-                        <p className="mt-1 text-[0.75rem] leading-relaxed text-muted-foreground">
+                        <p className="mt-1 text-[0.75rem] leading-relaxed text-muted-foreground [font-family:var(--font-accent)] tracking-wide">
                           {feature.text}
                         </p>
                       </div>
@@ -253,9 +253,9 @@ export default function HomePage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/15 text-gold">
                       <Icon size={24} />
                     </div>
-                    <h3 className="mt-5 text-xl text-sand">{value.title}</h3>
+                    <h3 className="mt-5 text-xl text-sand font-sans font-semibold">{value.title}</h3>
                     <span className="mt-2 block h-0.5 w-6 rounded-full bg-gold/50" aria-hidden="true" />
-                    <p className="mt-4 text-sm leading-relaxed text-sand/70">
+                    <p className="mt-4 text-sm leading-relaxed text-sand/70 font-sans">
                       {value.text}
                     </p>
                   </div>

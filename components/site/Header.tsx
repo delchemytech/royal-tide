@@ -44,18 +44,23 @@ export function Header() {
       <div className="w-full bg-[#1A1A1A] text-white py-2.5">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-4 text-[0.75rem] font-medium tracking-wide">
           <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-            <div className="flex items-center gap-2">
-              <Phone className="text-gold" size={14} />
+            <a href={`tel:${content.contact.phoneHref}`} className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200">
+              <Phone className="text-gold/80" size={12} />
               <span>{content.contact.phoneDisplay}</span>
-            </div>
+            </a>
             <div className="hidden sm:flex items-center gap-2">
               <MapPin className="text-gold" size={14} />
               <span>{content.contact.addressDisplay}</span>
             </div>
-            <div className="hidden md:flex items-center gap-2">
-              <Mail className="text-gold" size={14} />
-              <span>{content.contact.emailInfo}</span>
-            </div>
+            <a
+              href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden md:flex items-center gap-1.5 hover:text-gold transition-colors duration-200"
+            >
+              <Mail className="text-gold/80" size={12} />
+              <span>{content.contact.emailSales}</span>
+            </a>
           </div>
           <div className="hidden lg:flex items-center gap-5">
             <span className="text-gray-400 text-[0.65rem] font-bold">FOLLOW US:</span>

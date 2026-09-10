@@ -1,7 +1,7 @@
 "use client";
 
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useState, useRef, type FormEvent, type ChangeEvent, type FocusEvent } from "react";
 import { ActionButton, btn } from "@/components/site/Button";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
@@ -11,16 +11,159 @@ const { contactPage, contact } = content;
 
 const field =
   "mt-2 w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-gold focus:ring-1 focus:ring-gold/30";
+const fieldError =
+  "mt-2 w-full rounded-lg border border-red-400 bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-red-500 focus:ring-1 focus:ring-red-300";
 const label =
   "text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-navy-deep";
 
+// ── Sanitization ──────────────────────────────────────────────────────────────
+/** Strip all HTML tags and dangerous characters to prevent XSS / injection */
+function sanitize(value: string): string {
+  return value
+    .replace(/<[^>]*>/g, "")           // strip HTML tags
+    .replace(/[<>"'`]/g, "")           // remove remaining angle brackets & quotes
+    .replace(/javascript:/gi, "")      // block javascript: URIs
+    .replace(/on\w+\s*=/gi, "")        // strip inline event handlers
+    .replace(/data:/gi, "")            // block data: URIs
+    .trim();
+}
+
+/** Sanitize every string value in the form data object */
+function sanitizeAll(data: Record<string, FormDataEntryValue>) {
+  return Object.fromEntries(
+    Object.entries(data).map(([k, v]) => [k, typeof v === "string" ? sanitize(v) : v])
+  );
+}
+
+// ── Validation rules ──────────────────────────────────────────────────────────
+const RULES = {
+  name: {
+    required: true,
+    minLength: 2,
+    maxLength: 80,
+    pattern: /^[a-zA-Z\u00C0-\u024F '\-.]+$/,
+    patternMsg: "Name may only contain letters, spaces, hyphens, or apostrophes.",
+  },
+  company: {
+    required: true,
+    minLength: 2,
+    maxLength: 100,
+    pattern: /^[a-zA-Z0-9\u00C0-\u024F &',\-.()]+$/,
+    patternMsg: "Company name contains invalid characters.",
+  },
+  email: {
+    required: true,
+    maxLength: 254,
+    // RFC 5322 simplified
+    pattern: /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/,
+    patternMsg: "Please enter a valid email address.",
+  },
+  phone: {
+    required: false,
+    maxLength: 20,
+    // Allow +, digits, spaces, dashes, parentheses
+    pattern: /^[+]?[\d\s()\-]{6,20}$/,
+    patternMsg: "Phone must be 6–20 digits and may include +, spaces, or dashes.",
+  },
+  message: {
+    required: true,
+    minLength: 10,
+    maxLength: 2000,
+    pattern: /^[\s\S]{10,2000}$/,
+    patternMsg: "Message must be between 10 and 2000 characters.",
+  },
+};
+
+type FieldKey = keyof typeof RULES;
+type FieldErrors = Partial<Record<FieldKey, string>>;
+
+function validateField(name: FieldKey, value: string): string {
+  const r = RULES[name];
+  const v = value.trim();
+
+  if (r.required && !v) return "This field is required.";
+  if (!r.required && !v) return ""; // optional + empty → OK
+
+  if ("minLength" in r && r.minLength && v.length < r.minLength)
+    return `Minimum ${r.minLength} characters required.`;
+  if (r.maxLength && v.length > r.maxLength)
+    return `Maximum ${r.maxLength} characters allowed.`;
+  if (r.pattern && !r.pattern.test(v)) return r.patternMsg;
+
+  return "";
+}
+
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({});
+  const formRef = useRef<HTMLFormElement>(null);
   const wa = whatsappLink();
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const name = e.target.name as FieldKey;
+    if (!touched[name]) return; // only re-validate after first blur
+    const msg = validateField(name, sanitize(e.target.value));
+    setFieldErrors((prev) => ({ ...prev, [name]: msg }));
+  }
+
+  function handleBlur(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const name = e.target.name as FieldKey;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const msg = validateField(name, sanitize(e.target.value));
+    setFieldErrors((prev) => ({ ...prev, [name]: msg }));
+  }
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setSubmitError("");
+
+    // Validate all fields up-front
+    const formData = new FormData(e.currentTarget);
+    const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
+    const allTouched: Partial<Record<FieldKey, boolean>> = {};
+    const errors: FieldErrors = {};
+    let hasError = false;
+
+    (Object.keys(RULES) as FieldKey[]).forEach((key) => {
+      allTouched[key] = true;
+      const msg = validateField(key, sanitize(raw[key] ?? ""));
+      if (msg) { errors[key] = msg; hasError = true; }
+    });
+
+    setTouched(allTouched);
+    setFieldErrors(errors);
+    if (hasError) return;
+
+    // Sanitize before sending
+    const safe = sanitizeAll(raw as Record<string, FormDataEntryValue>);
+
+    setLoading(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "8e02f809-f68b-44f3-8e6f-d6ceaa9431c3",
+          to: "sales@royaltides.ae",
+          subject: `New RFQ from ${safe.name} — ${safe.company}`,
+          ...safe,
+        }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSent(true);
+        formRef.current?.reset();
+      } else {
+        setSubmitError("Something went wrong. Please try again or reach us on WhatsApp.");
+      }
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -59,22 +202,28 @@ export default function ContactPage() {
                 <InfoRow icon={<Mail size={18} />} title="Email">
                   <a
                     className="block hover:text-gold transition-colors"
-                    href={`mailto:${contact.emailInfo}`}
+                    href={`https://mail.google.com/mail/?view=cm&to=${contact.emailInfo}`}
+                    target="_blank" rel="noreferrer"
                   >
                     {contact.emailInfo}
                   </a>
                   <a
                     className="block hover:text-gold transition-colors"
-                    href={`mailto:${contact.emailSales}`}
+                    href={`https://mail.google.com/mail/?view=cm&to=${contact.emailSales}`}
+                    target="_blank" rel="noreferrer"
                   >
                     {contact.emailSales}
                   </a>
                 </InfoRow>
                 <InfoRow icon={<Phone size={18} />} title="Telephone">
-                  {contact.phoneDisplay}
+                  <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
+                    {contact.phoneDisplay}
+                  </a>
                 </InfoRow>
                 <InfoRow icon={<MessageCircle size={18} />} title="WhatsApp">
-                  {contact.whatsappDisplay}
+                  <a href={wa} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+                    {contact.whatsappDisplay}
+                  </a>
                 </InfoRow>
                 <InfoRow icon={<MapPin size={18} />} title="Trade Location">
                   {contact.addressDisplay}
@@ -124,68 +273,100 @@ export default function ContactPage() {
                 {contactPage.form.success}
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="mt-8 grid gap-5 sm:grid-cols-2">
+              <form ref={formRef} onSubmit={onSubmit} noValidate className="mt-8 grid gap-5 sm:grid-cols-2">
+                {/* Web3Forms hidden fields */}
+                <input type="hidden" name="access_key" value="8e02f809-f68b-44f3-8e6f-d6ceaa9431c3" />
+                <input type="hidden" name="subject" value="New RFQ — Royal Tide Website" />
+                <input type="hidden" name="from_name" value="Royal Tide Website" />
+
+                {/* Submit-level error */}
+                {submitError && (
+                  <div role="alert" className="sm:col-span-2 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {submitError}
+                  </div>
+                )}
+
+                {/* Name */}
                 <div>
-                  <label className={label} htmlFor="name">
-                    Name
-                  </label>
-                  <input id="name" name="name" required className={field} />
-                </div>
-                <div>
-                  <label className={label} htmlFor="company">
-                    Company Name
-                  </label>
-                  <input id="company" name="company" required className={field} />
-                </div>
-                <div>
-                  <label className={label} htmlFor="email">
-                    Email
-                  </label>
+                  <label className={label} htmlFor="name">Name <span className="text-red-500">*</span></label>
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className={field}
+                    id="name" name="name" autoComplete="name"
+                    maxLength={80}
+                    onChange={handleChange} onBlur={handleBlur}
+                    className={fieldErrors.name ? fieldError : field}
+                    aria-describedby={fieldErrors.name ? "name-err" : undefined}
                   />
+                  {fieldErrors.name && <p id="name-err" role="alert" className="mt-1 text-xs text-red-600">{fieldErrors.name}</p>}
                 </div>
+
+                {/* Company */}
                 <div>
-                  <label className={label} htmlFor="phone">
-                    Phone Number
-                  </label>
-                  <input id="phone" name="phone" type="tel" className={field} />
+                  <label className={label} htmlFor="company">Company Name <span className="text-red-500">*</span></label>
+                  <input
+                    id="company" name="company" autoComplete="organization"
+                    maxLength={100}
+                    onChange={handleChange} onBlur={handleBlur}
+                    className={fieldErrors.company ? fieldError : field}
+                    aria-describedby={fieldErrors.company ? "company-err" : undefined}
+                  />
+                  {fieldErrors.company && <p id="company-err" role="alert" className="mt-1 text-xs text-red-600">{fieldErrors.company}</p>}
                 </div>
+
+                {/* Email */}
+                <div>
+                  <label className={label} htmlFor="email">Email <span className="text-red-500">*</span></label>
+                  <input
+                    id="email" name="email" type="email" autoComplete="email"
+                    maxLength={254}
+                    onChange={handleChange} onBlur={handleBlur}
+                    className={fieldErrors.email ? fieldError : field}
+                    aria-describedby={fieldErrors.email ? "email-err" : undefined}
+                  />
+                  {fieldErrors.email && <p id="email-err" role="alert" className="mt-1 text-xs text-red-600">{fieldErrors.email}</p>}
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className={label} htmlFor="phone">Phone Number</label>
+                  <input
+                    id="phone" name="phone" type="tel" autoComplete="tel"
+                    maxLength={20}
+                    onChange={handleChange} onBlur={handleBlur}
+                    className={fieldErrors.phone ? fieldError : field}
+                    aria-describedby={fieldErrors.phone ? "phone-err" : undefined}
+                  />
+                  {fieldErrors.phone && <p id="phone-err" role="alert" className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
+                </div>
+
+                {/* Category */}
                 <div className="sm:col-span-2">
-                  <label className={label} htmlFor="category">
-                    Product Category Interest
-                  </label>
+                  <label className={label} htmlFor="category">Product Category Interest</label>
                   <select id="category" name="category" className={field} defaultValue="">
-                    <option value="" disabled>
-                      Select a category
-                    </option>
+                    <option value="" disabled>Select a category</option>
                     {contactPage.form.categories.map((c: string) => (
-                      <option key={c} value={c}>
-                        {c}
-                      </option>
+                      <option key={c} value={c}>{c}</option>
                     ))}
                   </select>
                 </div>
+
+                {/* Message */}
                 <div className="sm:col-span-2">
-                  <label className={label} htmlFor="message">
-                    Message / RFQ Details
-                  </label>
+                  <label className={label} htmlFor="message">Message / RFQ Details <span className="text-red-500">*</span></label>
                   <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className={field}
+                    id="message" name="message" rows={5}
+                    maxLength={2000}
+                    onChange={handleChange} onBlur={handleBlur}
+                    className={cn(fieldErrors.message ? fieldError : field, "resize-y")}
                     placeholder="Quantities, specifications, delivery location and timeline."
+                    aria-describedby={fieldErrors.message ? "message-err" : undefined}
                   />
+                  {fieldErrors.message && <p id="message-err" role="alert" className="mt-1 text-xs text-red-600">{fieldErrors.message}</p>}
                 </div>
+
+                {/* Submit */}
                 <div className="sm:col-span-2">
-                  <ActionButton type="submit" variant="navy" className="w-full sm:w-auto">
-                    Submit Inquiry
+                  <ActionButton type="submit" variant="navy" className="w-full sm:w-auto" disabled={loading}>
+                    {loading ? "Sending…" : "Submit Inquiry"}
                   </ActionButton>
                 </div>
               </form>
