@@ -1,8 +1,8 @@
 import content from "@/data/content.json";
-const tableware = "https://images.unsplash.com/photo-1615801368940-275d278453ab?q=80&w=800&auto=format&fit=crop";
-const cutlery = "https://images.unsplash.com/photo-1606041011872-5965904620f4?q=80&w=800&auto=format&fit=crop";
-const glassware = "https://images.unsplash.com/photo-1510007551065-224422e57207?q=80&w=800&auto=format&fit=crop";
-const linen = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop";
+const tableware = "/corkeyandtablewear.png";
+const cutlery = "/steel.png";
+const glassware = "/glass.png";
+const linen = "/table_andsuite.png";
 const buffet = "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop";
 
 export { content };

@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, MessageCircle, X, Phone, MapPin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { content, whatsappLink } from "@/lib/site";
-import { btn } from "./Button";
 import { Logo } from "./Logo";
 
 const nav = [
@@ -34,122 +33,134 @@ export function Header() {
     };
   }, [open]);
 
-  const solid = scrolled || open;
-
   function isActive(to: string) {
     if (to === "/") return pathname === "/";
     return pathname.startsWith(to);
   }
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        solid
-          ? "bg-sand/95 shadow-soft backdrop-blur-md border-b border-border"
-          : "bg-transparent border-b border-transparent",
-      )}
-    >
-      <div className="container-rt flex h-[4.5rem] items-center justify-between gap-6 sm:h-[5rem]">
-        <div
-          className={cn(
-            "transition-opacity duration-300",
-            solid ? "opacity-100" : "rounded-lg bg-sand/90 px-3 py-1.5",
-          )}
-        >
-          <Logo />
+    <header className="fixed inset-x-0 top-0 z-50 flex flex-col items-center">
+      {/* ─── TOP BLACK BAR ─── */}
+      <div className="w-full bg-[#1A1A1A] text-white py-2.5">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-4 text-[0.75rem] font-medium tracking-wide">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+            <div className="flex items-center gap-2">
+              <Phone className="text-gold" size={14} />
+              <span>{content.contact.phoneDisplay}</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-2">
+              <MapPin className="text-gold" size={14} />
+              <span>{content.contact.addressDisplay}</span>
+            </div>
+            <div className="hidden md:flex items-center gap-2">
+              <Mail className="text-gold" size={14} />
+              <span>{content.contact.emailInfo}</span>
+            </div>
+          </div>
+          <div className="hidden lg:flex items-center gap-5">
+            <span className="text-gray-400 text-[0.65rem] font-bold">FOLLOW US:</span>
+            <a href="#" className="flex items-center gap-1.5 hover:text-gold transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              <span>Royal Tide</span>
+            </a>
+          </div>
         </div>
-
-        <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-10">
-            {nav.map((item) => (
-              <li key={item.to}>
-                <Link
-                  href={item.to}
-                  className={cn(
-                    "relative py-2 text-[0.8rem] font-semibold uppercase tracking-[0.16em] transition-colors",
-                    solid
-                      ? "text-navy-deep hover:text-gold"
-                      : "text-sand hover:text-gold",
-                    isActive(item.to) && "text-gold",
-                  )}
-                >
-                  {item.label}
-                  {/* Gold active underline */}
-                  {isActive(item.to) && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gold" />
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <a
-          href={wa}
-          target={wa.startsWith("http") ? "_blank" : undefined}
-          rel="noreferrer"
-          className={cn(btn({ variant: "gold", size: "sm" }), "hidden lg:inline-flex")}
-        >
-          <MessageCircle size={15} aria-hidden="true" />
-          Inquire on WhatsApp
-        </a>
-
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className={cn(
-            "inline-flex h-11 w-11 items-center justify-center rounded-lg border transition-colors lg:hidden",
-            solid
-              ? "border-border text-navy-deep"
-              : "border-sand/40 text-sand",
-          )}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ─── FLOATING PILL NAV ─── */}
+      <div 
+        className={cn(
+          "w-full max-w-[90rem] mx-auto px-4 sm:px-8 transition-all duration-300",
+          scrolled ? "mt-0" : "mt-5"
+        )}
+      >
+        <div className="flex h-[4.5rem] items-center justify-between gap-6 rounded-full bg-white px-6 sm:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 relative z-20">
+          
+          <div className="shrink-0 lg:flex-1 flex justify-start transition-opacity duration-300">
+            <Logo />
+          </div>
+
+          <nav aria-label="Main" className="hidden lg:flex flex-1 justify-end lg:justify-center">
+            <ul className="flex items-center gap-2">
+              {nav.map((item) => {
+                const active = isActive(item.to);
+                return (
+                  <li key={item.to} className="relative flex flex-col items-center">
+                    <Link
+                      href={item.to}
+                      className={cn(
+                        "px-5 py-2 text-[0.85rem] font-bold transition-all duration-300 rounded-full",
+                        active
+                          ? "bg-gold/10 text-gold"
+                          : "text-navy-deep hover:text-gold"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                    {active && (
+                      <span className="absolute -bottom-1.5 h-1 w-1 rounded-full bg-gold" />
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 text-navy-deep transition-colors lg:hidden hover:bg-gray-50 ml-auto"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {/* ─── MOBILE MENU ─── */}
       <div
         id="mobile-menu"
         className={cn(
-          "overflow-hidden border-t bg-sand transition-[max-height] duration-300 lg:hidden",
-          open ? "max-h-[32rem] border-border" : "max-h-0 border-transparent",
+          "absolute left-4 right-4 top-24 z-10 overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 lg:hidden border border-gray-100",
+          open ? "max-h-[32rem] opacity-100 pointer-events-auto translate-y-0" : "max-h-0 opacity-0 pointer-events-none -translate-y-4"
         )}
       >
-        <nav aria-label="Mobile" className="container-rt py-4">
-          <ul className="divide-y divide-border">
-            {nav.map((item) => (
-              <li key={item.to}>
-                <Link
-                  href={item.to}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "block py-4 text-sm font-semibold uppercase tracking-[0.14em] transition-colors",
-                    isActive(item.to) ? "text-gold" : "text-navy-deep",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+        <nav aria-label="Mobile" className="px-6 py-6">
+          <ul className="space-y-2">
+            {nav.map((item) => {
+              const active = isActive(item.to);
+              return (
+                <li key={item.to}>
+                  <Link
+                    href={item.to}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "block rounded-xl px-4 py-3 text-sm font-bold transition-colors",
+                      active ? "bg-gold/10 text-gold" : "text-navy-deep hover:bg-gray-50"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <a
             href={wa}
             target={wa.startsWith("http") ? "_blank" : undefined}
             rel="noreferrer"
             onClick={() => setOpen(false)}
-            className={cn(btn({ variant: "gold" }), "mt-5 mb-2 w-full")}
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 text-sm font-bold text-navy-deep transition-colors hover:bg-gold/90"
           >
             <MessageCircle size={16} aria-hidden="true" />
             Inquire on WhatsApp
           </a>
-          <p className="pb-4 text-center text-xs text-muted-foreground">
-            {content.contact.emailSales}
-          </p>
         </nav>
       </div>
     </header>

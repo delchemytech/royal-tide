@@ -16,7 +16,7 @@ export function Footer() {
   const wa = whatsappLink();
 
   return (
-    <footer className="bg-[#0A1120] text-sand">
+    <footer className="bg-white text-navy-deep border-t border-border">
       {/* Gold top border */}
       <div className="h-1 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
 
@@ -24,8 +24,8 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1.3fr]">
           {/* Brand column */}
           <div>
-            <Logo variant="light" />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-sand/65">
+            <Logo />
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Commercial-grade tableware, cutlery, glassware and bed &amp; bath
               linen for hotels, restaurants and catering operations across the
               UAE.
@@ -47,7 +47,7 @@ export function Footer() {
               <li key={l.to}>
                 <Link
                   href={l.to}
-                  className="text-sm text-sand/65 transition-colors hover:text-gold"
+                  className="text-sm text-muted-foreground transition-colors hover:text-gold"
                 >
                   {l.label}
                 </Link>
@@ -57,7 +57,7 @@ export function Footer() {
 
           {/* Contact */}
           <FooterColumn title="Contact">
-            <li className="flex items-start gap-3 text-sm text-sand/65">
+            <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Mail size={16} className="mt-0.5 shrink-0 text-gold" />
               <span className="flex flex-col gap-1">
                 <a className="hover:text-gold transition-colors" href={`mailto:${contact.emailInfo}`}>
@@ -68,11 +68,11 @@ export function Footer() {
                 </a>
               </span>
             </li>
-            <li className="flex items-start gap-3 text-sm text-sand/65">
+            <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
               <span>{contact.phoneDisplay}</span>
             </li>
-            <li className="flex items-start gap-3 text-sm text-sand/65">
+            <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
               <span>{contact.addressDisplay}</span>
             </li>
@@ -80,10 +80,10 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-sand/10">
+      <div className="border-t border-border">
         <div className="container-rt flex flex-col items-start justify-between gap-3 py-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-sand/45">{company.copyright}</p>
-          <p className="text-xs text-sand/45">{company.domain}</p>
+          <p className="text-xs text-muted-foreground/60">{company.copyright}</p>
+          <p className="text-xs text-muted-foreground/60">{company.domain}</p>
         </div>
       </div>
     </footer>

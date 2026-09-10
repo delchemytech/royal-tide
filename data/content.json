@@ -8,19 +8,18 @@
   "contact": {
     "emailInfo": "info@royaltides.ae",
     "emailSales": "sales@royaltides.ae",
-    "phoneDisplay": "[TELEPHONE NUMBER]",
-    "phoneHref": "",
-    "whatsappNumber": "",
-    "whatsappDisplay": "[WHATSAPP NUMBER]",
+    "phoneDisplay": "+971 2 51 76889 | +971 50 134 4537",
+    "phoneHref": "+97125176889",
+    "whatsappNumber": "+971501344537",
+    "whatsappDisplay": "+971 50 134 4537",
     "whatsappMessage": "Hi Royal Tide, I would like to inquire about your hospitality collections.",
     "location": "United Arab Emirates",
-    "addressDisplay": "[UAE OFFICE ADDRESS]",
-    "hours": "Sunday – Thursday, [OPENING HOURS]"
+    "addressDisplay": "Office 4, Musaffah 37, Abu Dhabi",
+    "hours": "Sunday – Thursday, 9:00 AM – 6:00 PM"
   },
   "nav": [
     { "label": "Home", "to": "/" },
-    { "label": "Collections", "to": "/collections" },
-    { "label": "Contact Us", "to": "/contact" }
+    { "label": "Collections", "to": "/collections" }
   ],
   "home": {
     "seoTitle": "Royal Tide General Trading LLC SPC | Hospitality Supplies UAE",
@@ -34,20 +33,41 @@
       "secondaryCta": "Contact Sales"
     },
     "about": {
-      "eyebrow": "About Us",
-      "title": "Built Around Hospitality Procurement",
-      "paragraphs": [
-        "Royal Tide General Trading LLC SPC is a United Arab Emirates general trading company supplying operating equipment and supplies to the hospitality sector.",
-        "The company is licensed and registered as a General Trading LLC SPC in the UAE, and trades under that licence for the import and supply of commercial hospitality goods.",
-        "Our focus is a curated, commercial-grade range — tableware, cutlery, glassware and bed & bath linen — specified for the realities of daily service, industrial washing and guest-facing presentation."
+      "eyebrow": "ABOUT ROYAL TIDE",
+      "title": "Built for the Business of Hospitality",
+      "description": "Royal Tide General Trading LLC SPC is a dedicated UAE-based trading company providing commercial-grade hospitality operating supplies designed for rigorous professional environments. From prestigious international hotel chains to Michelin-starred dining rooms and large-scale catering operations, we deliver regional procurement with enduring durability and uncompromised elegance.",
+      "imageAlt": "High-Alumina Vitrified Fine Porcelain plate with gold rim",
+      "materialSpec": "High-Alumina Vitrified Fine Porcelain",
+      "stats": [
+        { "value": "100%", "label": "COMMERCIAL\\nGRADE" },
+        { "value": "300+", "label": "PRE-APPROVED\\nLINES" },
+        { "value": "UAE", "label": "CENTRAL HUB" }
       ],
-      "missionTitle": "Our Mission",
-      "mission": "To make hospitality procurement straightforward: a focused range of dependable, presentation-ready supplies, sourced and delivered for regional hotels, restaurants and catering operations."
+      "features": [
+        {
+          "title": "UAE Regional Hub",
+          "text": "Strategic regional logistics center ensuring dependable local inventory."
+        },
+        {
+          "title": "High-Volume Durability",
+          "text": "Thermal shock resistance and commercial dishwashing resilience."
+        },
+        {
+          "title": "5-Star Standards",
+          "text": "Curated portfolio for luxury resort chains and prestigious hospitality."
+        },
+        {
+          "title": "Tailored Sourcing",
+          "text": "Dedicated OS&E project packages and bespoke procurement contracts."
+        }
+      ],
+      "linkText": "Connect with our Dubai OS&E Director",
+      "linkHref": "/contact"
     },
     "categoriesSection": {
-      "eyebrow": "Collections",
-      "title": "Four Core Product Verticals",
-      "intro": "The front and back-of-house essentials hospitality properties specify and reorder most."
+      "eyebrow": "CORE VERTICALS",
+      "title": "A complete table. A considered stay.",
+      "intro": ""
     },
     "trust": {
       "eyebrow": "Why Choose Us",
@@ -98,17 +118,26 @@
   "categoryCards": [
     {
       "id": "tableware",
-      "name": "Tableware & Dining",
-      "description": "Vitrified porcelain plates, bowls, cups and 18/10 stainless steel flatware.",
+      "name": "Crockery & Tableware",
+      "description": "Bone china, premium porcelain and artisanal pieces composed for memorable service.",
       "image": "tableware",
       "alt": "White porcelain plates and bowls arranged on a restaurant table",
       "href": "/collections/tableware",
       "productCount": 8
     },
     {
+      "id": "cutlery",
+      "name": "Cutlery & Flatware",
+      "description": "Polished and matte 18/10 stainless steel selected for balance, finish and durability.",
+      "image": "cutlery",
+      "alt": "Stainless steel cutlery set on a dining table",
+      "href": "/collections/cutlery",
+      "productCount": 7
+    },
+    {
       "id": "glassware",
-      "name": "Glassware & Barware",
-      "description": "Heavy-base tumblers, goblets, stemware, carafes and shot glasses.",
+      "name": "Glassware",
+      "description": "Crystal tumblers, stemware and carafes that bring clarity and proportion to every table.",
       "image": "glassware",
       "alt": "Crystal tumblers and wine glasses set on a hotel bar table",
       "href": "/collections/glassware",
@@ -116,21 +145,12 @@
     },
     {
       "id": "linen",
-      "name": "Bed & Bath Linen",
-      "description": "300TC satin stripe bed linen and 600 GSM ring-spun cotton toweling.",
+      "name": "Table & Suite Linens",
+      "description": "Textured napkins, runners, bed and bath linens tailored to demanding hotel use.",
       "image": "linen",
       "alt": "Hotel bedroom with crisp white bed linen and folded towels",
       "href": "/collections/linen",
       "productCount": 8
-    },
-    {
-      "id": "buffet",
-      "name": "Buffet & Service",
-      "description": "Chafing dishes, GN pans, beverage dispensers and tabletop service accessories.",
-      "image": "buffet",
-      "alt": "Stainless steel chafing dishes and buffet service equipment",
-      "href": "/collections/buffet",
-      "productCount": 6
     }
   ],
   "catalog": {
@@ -139,7 +159,7 @@
       "title": "Tableware & Dining Essentials",
       "subtitle": "Commercial Porcelain & 18/10 Flatware",
       "description": "High-alumina vitrified porcelain and heavy-gauge 18/10 stainless steel flatware specified for the rigors of daily commercial hospitality service.",
-      "heroImage": "https://images.unsplash.com/photo-1615801368940-275d278453ab?q=80&w=1920&auto=format&fit=crop",
+      "heroImage": "/catogory1.jpg",
       "products": [
         {
           "name": "Porcelain Dinner Plate",
@@ -204,7 +224,7 @@
       "title": "Glassware & Barware",
       "subtitle": "Commercial Bar & Dining Glass",
       "description": "Soda-lime and crystal glassware engineered for racking, high-turnover bar service, and banquet operations.",
-      "heroImage": "https://images.unsplash.com/photo-1510007551065-224422e57207?q=80&w=1920&auto=format&fit=crop",
+      "heroImage": "/catogory2.jpg",
       "products": [
         {
           "name": "Heavy-Base Water Tumbler",
@@ -262,7 +282,7 @@
       "title": "Bed & Bath Linen",
       "subtitle": "Hotel-Grade Cotton Linen & Toweling",
       "description": "300TC long-staple cotton bed linen and 500–800 GSM ring-spun toweling with the tensile strength required for industrial laundry cycles.",
-      "heroImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1920&auto=format&fit=crop",
+      "heroImage": "/catogory3.jpg",
       "products": [
         {
           "name": "300 TC Satin Stripe Bed Sheet",
@@ -327,7 +347,7 @@
       "title": "Buffet & Service Accessories",
       "subtitle": "Commercial Buffet Equipment & Tabletop Accessories",
       "description": "Stainless steel chafing dishes, GN food pans, beverage dispensers and tabletop service accessories for buffets, banquets, and conference setups.",
-      "heroImage": "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1920&auto=format&fit=crop",
+      "heroImage": "/catogory4.jpg",
       "products": [
         {
           "name": "Roll-Top Chafing Dish",
@@ -386,6 +406,19 @@
       "title": "Looking for customized procurement or specific catalog items?",
       "text": "Send us your requirement and our sourcing team will respond with availability and options.",
       "cta": "Inquire on WhatsApp"
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "title": "Our Products in Detail",
+      "intro": "A closer look at the quality, finish, and design of our hospitality operating supplies.",
+      "images": [
+        "/gallery1.png",
+        "/gallery2.png",
+        "/gallery3.png",
+        "/gallery4.png",
+        "/gallery5.png",
+        "/gallery6.png"
+      ]
     }
   },
   "contactPage": {

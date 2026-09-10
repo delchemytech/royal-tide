@@ -94,10 +94,17 @@ export default function ContactPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {contactPage.mapCard.text}
               </p>
-              <div className="mt-6 flex aspect-[16/9] items-center justify-center rounded-lg border border-dashed border-navy-deep/20 bg-card">
-                <span className="px-6 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Map placeholder — [UAE OFFICE ADDRESS]
-                </span>
+              <div className="mt-6 overflow-hidden rounded-lg border border-border bg-card aspect-[16/9]">
+                <iframe
+                  src="https://maps.google.com/maps?q=Office%204,%20Musaffah%2037,%20Abu%20Dhabi&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="UAE Operations Map"
+                />
               </div>
             </Reveal>
           </div>

@@ -37,7 +37,7 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative isolate flex min-h-[95vh] items-end overflow-hidden bg-navy-deep">
+      <section className="relative isolate flex min-h-screen items-center overflow-hidden bg-navy-deep">
         <img
           src={hero}
           alt="Luxury UAE hotel dining room set with white porcelain tableware and glassware"
@@ -47,22 +47,22 @@ export default function HomePage() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/80 to-[#0F172A]/40"
           aria-hidden="true"
         />
-        <div className="container-rt pb-20 pt-40 sm:pb-28 sm:pt-48">
+        <div className="container-rt pb-16 pt-24 sm:pb-20 sm:pt-32">
           <div className="max-w-3xl animate-[fadeInUp_0.8s_ease-out_both]">
             <span className="eyebrow">
               <span className="h-px w-6 bg-gold" aria-hidden="true" />
               {home.hero.eyebrow}
             </span>
-            <h1 className="mt-6 text-4xl leading-[1.08] text-sand sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-4xl leading-[1.08] text-sand sm:text-5xl lg:text-6xl">
               {home.hero.headline}
               <span className="block text-gold">
                 {home.hero.headlineAccent}
               </span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-relaxed text-sand/80 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-sand/80 sm:text-[1.05rem]">
               {home.hero.subline}
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <ActionLink href="/collections" variant="gold">
                 {home.hero.primaryCta}
               </ActionLink>
@@ -75,67 +75,129 @@ export default function HomePage() {
       </section>
 
       {/* ─── ABOUT ─── */}
-      <section className="bg-sand section-py">
-        <div className="container-rt grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
-          <SectionHeading
-            eyebrow={home.about.eyebrow}
-            title={home.about.title}
-            className="max-w-xl"
-          />
-          <Reveal className="space-y-5">
-            {home.about.paragraphs.map((p: string) => (
-              <p key={p} className="text-base leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
-            <div className="rounded-lg border-l-[3px] border-gold bg-card p-6 shadow-card">
-              <h3 className="text-lg text-navy-deep">{home.about.missionTitle}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {home.about.mission}
-              </p>
+      <section className="bg-[#FAF9FC] py-12 lg:py-16">
+        <div className="container-rt grid items-start gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
+          {/* Left Column: Visuals & Stats */}
+          <Reveal className="space-y-4">
+            <div className="overflow-hidden rounded-xl bg-muted shadow-sm">
+              <div className="relative aspect-[16/9] w-full">
+                <img
+                  src="/aboutpic.jpg"
+                  alt={home.about.imageAlt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="bg-card p-4 sm:p-5 flex items-center justify-between gap-4 border-b border-border">
+                <div>
+                  <span className="text-[0.6rem] font-bold text-gold tracking-widest uppercase block mb-1">
+                    MATERIAL SPECIFICATION
+                  </span>
+                  <p className="font-semibold text-navy-deep text-[0.85rem] sm:text-sm">
+                    {home.about.materialSpec}
+                  </p>
+                </div>
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+                  <ShieldCheck size={16} />
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-3 divide-x divide-navy-deep/10 rounded-xl bg-[#F0F2F9] py-4 shadow-sm">
+              {home.about.stats.map((stat: any) => (
+                <div key={stat.label} className="flex flex-col items-center justify-center px-2 text-center">
+                  <span className="font-display text-lg sm:text-xl font-semibold text-navy-deep">
+                    {stat.value}
+                  </span>
+                  <span className="mt-1 text-[0.55rem] sm:text-[0.6rem] font-bold tracking-widest uppercase text-navy-deep/70 whitespace-pre-line">
+                    {stat.label.replace('\\n', '\n')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Right Column: Content & Features */}
+          <Reveal className="flex flex-col justify-center" delay={200}>
+            <span className="eyebrow mb-2">
+              {home.about.eyebrow}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[2rem] leading-tight text-navy-deep font-display">
+              {home.about.title}
+            </h2>
+            <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+              {home.about.description}
+            </p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {home.about.features.map((feature: any, i: number) => {
+                const Icon = [Truck, ShieldCheck, Zap, Package][i] || ShieldCheck;
+                return (
+                  <div key={feature.title} className="rounded-xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md">
+                    <div className="flex items-start gap-2.5">
+                      <Icon className="mt-0.5 shrink-0 text-gold" size={16} />
+                      <div>
+                        <h4 className="font-semibold text-navy-deep text-[0.85rem]">
+                          {feature.title}
+                        </h4>
+                        <p className="mt-1 text-[0.75rem] leading-relaxed text-muted-foreground">
+                          {feature.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-6">
+              <Link
+                href={home.about.linkHref}
+                className="inline-flex items-center gap-2 text-xs font-semibold text-navy-deep transition-colors hover:text-gold"
+              >
+                {home.about.linkText}
+                <ArrowRight size={14} />
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* ─── COLLECTION CARDS ─── */}
-      <section className="bg-background section-py">
+      <section className="bg-background py-12 lg:py-16">
         <div className="container-rt">
           <SectionHeading
             eyebrow={home.categoriesSection.eyebrow}
             title={home.categoriesSection.title}
             intro={home.categoriesSection.intro}
           />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 items-start">
             {categoryCards.map((category: any, i: number) => (
               <Reveal key={category.id} delay={i * 80}>
                 <Link
                   href={category.href || `/collections#${category.id}`}
-                  className="group block h-full rounded-lg border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lift hover:-translate-y-1"
+                  className={cn(
+                    "group block h-full outline-none transition-all duration-300 hover:-translate-y-2",
+                    i % 2 === 1 && "lg:mt-8"
+                  )}
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <div className="relative aspect-square overflow-hidden bg-muted">
                     <img
                       src={(images as any)[category.image]}
                       alt={category.alt}
                       loading="lazy"
                       width={800}
-                      height={600}
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      height={1000}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl text-navy-deep">{category.name}</h3>
-                    <span className="mt-2 block h-0.5 w-8 rounded-full bg-gold transition-all duration-300 group-hover:w-12" aria-hidden="true" />
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <div className="mt-4">
+                    <span className="text-[0.65rem] font-bold text-gold tracking-widest uppercase">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="mt-1.5 text-lg leading-tight text-navy-deep">{category.name}</h3>
+                    <p className="mt-2 text-[0.8rem] leading-snug text-muted-foreground">
                       {category.description}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-navy-deep transition-colors group-hover:text-gold">
-                      View Collection
-                      <ArrowRight
-                        size={15}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </span>
                   </div>
                 </Link>
               </Reveal>
