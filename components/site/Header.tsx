@@ -72,14 +72,14 @@ export function Header() {
       </div>
 
       {/* ─── FLOATING PILL NAV ─── */}
-      <div 
+      <div
         className={cn(
           "w-full max-w-[90rem] mx-auto px-4 sm:px-8 transition-all duration-300",
           scrolled ? "mt-0" : "mt-5"
         )}
       >
         <div className="flex h-[4.5rem] items-center justify-between gap-6 rounded-full bg-white px-6 sm:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 relative z-20">
-          
+
           <div className="shrink-0 lg:flex-1 flex justify-start transition-opacity duration-300">
             <Logo />
           </div>
@@ -95,14 +95,14 @@ export function Header() {
                       className={cn(
                         "px-5 py-2 text-[0.85rem] font-bold transition-all duration-300 rounded-full",
                         active
-                          ? "bg-gold/10 text-gold"
-                          : "text-navy-deep hover:text-gold"
+                          ? "text-gold"
+                          : "text-navy-deep/80 hover:text-navy-deep hover:bg-navy-deep/5"
                       )}
                     >
                       {item.label}
                     </Link>
                     {active && (
-                      <span className="absolute -bottom-1.5 h-1 w-1 rounded-full bg-gold" />
+                      <span className="absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-gold" />
                     )}
                   </li>
                 );

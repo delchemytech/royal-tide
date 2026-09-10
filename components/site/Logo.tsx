@@ -17,7 +17,7 @@ export function Logo({
       <img 
         src="/logort.png" 
         alt="RoyalTide Logo" 
-        className="h-10 w-auto object-contain" 
+        className="h-20 w-auto object-contain" 
       />
     </Link>
   );

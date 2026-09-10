@@ -41,10 +41,10 @@ export default function HomePage() {
         <img
           src={hero}
           alt="Luxury UAE hotel dining room set with white porcelain tableware and glassware"
-          className="absolute inset-0 -z-10 object-cover w-full h-full"
+          className="absolute inset-0 -z-10 object-cover w-full h-full opacity-80"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/80 to-[#0F172A]/40"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent"
           aria-hidden="true"
         />
         <div className="container-rt pb-16 pt-24 sm:pb-20 sm:pt-32">
@@ -101,7 +101,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-3 divide-x divide-navy-deep/10 rounded-xl bg-[#F0F2F9] py-4 shadow-sm">
               {home.about.stats.map((stat: any) => (
                 <div key={stat.label} className="flex flex-col items-center justify-center px-2 text-center">
@@ -276,6 +276,47 @@ export default function HomePage() {
               <MessageCircle size={16} aria-hidden="true" />
               Inquire on WhatsApp
             </a>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ─── SOURCING CTA ─── */}
+      <section className=" py-16 lg:py-24">
+        <div className="container-rt">
+          <Reveal>
+            <div className="rounded-2xl bg-[#0d1a2c] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-16 border border-white/5">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" /><polyline points="14 2 14 8 20 8" /><path d="M2 15h10" /><path d="M2 18h10" /><path d="M2 12h10" /></svg>
+                  <span className="text-[0.65rem] font-bold text-gold tracking-widest uppercase">
+                    COMMERCIAL PROCUREMENT
+                  </span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-display text-sand leading-[1.1]">
+                  Looking for the Right Hospitality Supply Partner?
+                </h2>
+                <p className="mt-5 text-sand/70 text-sm sm:text-base leading-relaxed">
+                  Speak with our commercial OS&E sales team in Dubai about your next procurement requirement, tender quote, or volume order.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+                <a
+                  href={wa}
+                  target={wa.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className={cn(btn({ variant: "gold" }), "w-full sm:w-auto h-12 px-6 shadow-xl shadow-gold/10 rounded-full text-xs tracking-widest uppercase")}
+                >
+                  <MessageCircle size={16} aria-hidden="true" />
+                  CHAT ON WHATSAPP
+                </a>
+                <Link
+                  href="/contact"
+                  className={cn(btn({ variant: "outlineLight" }), "w-full sm:w-auto h-12 px-6 border-white/10 hover:bg-white/5 rounded-full text-xs tracking-widest uppercase")}
+                >
+                  CORPORATE INQUIRIES
+                </Link>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

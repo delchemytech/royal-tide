@@ -8,13 +8,13 @@
   "contact": {
     "emailInfo": "info@royaltides.ae",
     "emailSales": "sales@royaltides.ae",
-    "phoneDisplay": "+971 2 51 76889 | +971 50 134 4537",
-    "phoneHref": "+97125176889",
-    "whatsappNumber": "+971501344537",
-    "whatsappDisplay": "+971 50 134 4537",
+    "phoneDisplay": "+1 234 567 8900 | +1 987 654 3210",
+    "phoneHref": "+12345678900",
+    "whatsappNumber": "+19876543210",
+    "whatsappDisplay": "+1 987 654 3210",
     "whatsappMessage": "Hi Royal Tide, I would like to inquire about your hospitality collections.",
     "location": "United Arab Emirates",
-    "addressDisplay": "Office 4, Musaffah 37, Abu Dhabi",
+    "addressDisplay": "123 Demo Street, Demo City, Demo Country",
     "hours": "Sunday – Thursday, 9:00 AM – 6:00 PM"
   },
   "nav": [
@@ -410,7 +410,7 @@
     "gallery": {
       "eyebrow": "Gallery",
       "title": "Our Products in Detail",
-      "intro": "A closer look at the quality, finish, and design of our hospitality operating supplies.",
+      "intro": "A closer look at the quality, finish, and design of  hospitality operating supplies.",
       "images": [
         "/gallery1.png",
         "/gallery2.png",
