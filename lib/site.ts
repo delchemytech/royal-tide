@@ -4,6 +4,7 @@ const cutlery = "/steel.png";
 const glassware = "/glass.png";
 const linen = "/table_andsuite.png";
 const buffet = "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop";
+const cookware = "/cookware.jpg";
 
 export { content };
 
@@ -14,6 +15,7 @@ export const images: Record<string, string> = {
   glassware,
   linen,
   buffet,
+  cookware,
 };
 
 /**

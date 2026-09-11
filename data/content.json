@@ -151,6 +151,15 @@
       "alt": "Hotel bedroom with crisp white bed linen and folded towels",
       "href": "/collections/linen",
       "productCount": 8
+    },
+    {
+      "id": "cookware",
+      "name": "Commercial Cookware & Kitchen Utensils",
+      "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, and prep essentials.",
+      "image": "cookware",
+      "alt": "Heavy-duty commercial stainless steel cookware on a dark stone countertop",
+      "href": "/collections/cookware",
+      "productCount": 6
     }
   ],
   "catalog": {
@@ -392,6 +401,57 @@
           "alt": "Glass salt and pepper shaker set"
         }
       ]
+    },
+    "cookware": {
+      "id": "cookware",
+      "title": "Commercial Cookware & Kitchen Utensils",
+      "subtitle": "Professional Chef Cookware & Prep Essentials",
+      "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, prep containers, and desktop/countertop kitchen essentials.",
+      "heroImage": "/cookware.jpg",
+      "products": [
+        {
+          "name": "Heavy-Duty Stock Pot",
+          "specs": "Stainless Steel, Reinforced Base",
+          "reason": "Essential for commercial kitchens, high-volume broth and soup preparation.",
+          "image": "https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=800&auto=format&fit=crop",
+          "alt": "Large stainless steel stock pot"
+        },
+        {
+          "name": "Professional Stainless Steel Pan",
+          "specs": "Tri-Ply Clad, Heat Resistant Handle",
+          "reason": "Durable and even heating for sauteing and frying in professional settings.",
+          "image": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stainless steel frying pan"
+        },
+        {
+          "name": "Chef Utensil Set",
+          "specs": "18/10 Stainless Steel, Ergonomic Grips",
+          "reason": "Comprehensive set for prep and cooking, ensuring hygiene and longevity.",
+          "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop",
+          "alt": "Set of stainless steel chef utensils"
+        },
+        {
+          "name": "Gastronorm Prep Containers",
+          "specs": "Polycarbonate & Stainless Steel options",
+          "reason": "Standardized sizing for food storage, prep stations, and chafing dishes.",
+          "image": "https://images.unsplash.com/photo-1588644525273-f37b60d78512?q=80&w=800&auto=format&fit=crop",
+          "alt": "Gastronorm food prep containers"
+        },
+        {
+          "name": "Commercial Whisk",
+          "specs": "Heavy-duty wire, sealed handle",
+          "reason": "Built to withstand vigorous mixing in commercial baking and cooking.",
+          "image": "https://images.unsplash.com/photo-1583256032230-6db17f1bf516?q=80&w=800&auto=format&fit=crop",
+          "alt": "Heavy duty commercial whisk"
+        },
+        {
+          "name": "Heavy Duty Tongs",
+          "specs": "Stainless Steel, Spring-loaded",
+          "reason": "Reliable grip for grilling, serving, and turning in hot environments.",
+          "image": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=800&auto=format&fit=crop",
+          "alt": "Stainless steel tongs"
+        }
+      ]
     }
   },
   "collections": {
@@ -437,6 +497,7 @@
         "Glassware & Barware",
         "Bed & Bath Linen",
         "Buffet & Service Accessories",
+        "Commercial Cookware & Kitchen Utensils",
         "Multiple / Other"
       ],
       "success": "Thank you — your enquiry has been recorded. Our team will be in touch."

@@ -15,7 +15,7 @@ export function Logo({
       className={cn("inline-flex items-center", className)}
     >
       <img 
-        src="/logort.png" 
+        src="/logobgrm.png" 
         alt="RoyalTide Logo" 
         className="h-20 w-auto object-contain" 
       />

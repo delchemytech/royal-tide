@@ -30,6 +30,11 @@ const categories = [
     href: "/collections/buffet",
     count: catalog.buffet.products.length,
   },
+  {
+    ...catalog.cookware,
+    href: "/collections/cookware",
+    count: catalog.cookware.products.length,
+  },
 ];
 
 export const metadata = {
@@ -84,7 +89,7 @@ export default function CollectionsPage() {
           <div className="grid gap-6 sm:grid-cols-2 items-start">
             {/* Column 1 */}
             <div className="flex flex-col gap-6">
-              {[0, 2].map((i) => {
+              {[0, 2, 4].map((i) => {
                 const cat = categories[i];
                 const card = content.categoryCards[i];
                 const badgeLabel = card.name.split('&')[0].trim();
@@ -92,8 +97,7 @@ export default function CollectionsPage() {
 
                 return (
                   <Reveal key={cat.id} delay={i * 80}>
-                    <Link
-                      href={cat.href}
+                    <div
                       className="group block rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                     >
                       <div className={cn("relative overflow-hidden bg-mist", isOverlay ? "aspect-[4/3] lg:aspect-[1/1]" : "aspect-[3/2] lg:aspect-[16/9]")}>
@@ -128,7 +132,7 @@ export default function CollectionsPage() {
                           {card.description}
                         </p>
                       </div>
-                    </Link>
+                    </div>
                   </Reveal>
                 );
               })}
@@ -144,8 +148,7 @@ export default function CollectionsPage() {
 
                 return (
                   <Reveal key={cat.id} delay={i * 80}>
-                    <Link
-                      href={cat.href}
+                    <div
                       className="group block rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                     >
                       <div className={cn("relative overflow-hidden bg-mist", isOverlay ? "aspect-[4/3] lg:aspect-[1/1]" : "aspect-[3/2] lg:aspect-[16/9]")}>
@@ -180,7 +183,7 @@ export default function CollectionsPage() {
                           {card.description}
                         </p>
                       </div>
-                    </Link>
+                    </div>
                   </Reveal>
                 );
               })}

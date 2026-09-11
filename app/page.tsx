@@ -170,14 +170,13 @@ export default function HomePage() {
             title={home.categoriesSection.title}
             intro={home.categoriesSection.intro}
           />
-          <div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 items-start">
+          <div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {categoryCards.map((category: any, i: number) => (
               <Reveal key={category.id} delay={i * 80}>
-                <Link
-                  href={category.href || `/collections#${category.id}`}
+                <div
                   className={cn(
                     "group block h-full outline-none transition-all duration-300 hover:-translate-y-2",
-                    i % 2 === 1 && "lg:mt-8"
+                    i % 3 === 1 && "lg:mt-8"
                   )}
                 >
                   <div className="relative aspect-square overflow-hidden bg-muted">
@@ -199,7 +198,7 @@ export default function HomePage() {
                       {category.description}
                     </p>
                   </div>
-                </Link>
+                </div>
               </Reveal>
             ))}
           </div>
