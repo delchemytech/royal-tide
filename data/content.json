@@ -18,8 +18,14 @@
     "hours": "Sunday – Thursday, 9:00 AM – 6:00 PM"
   },
   "nav": [
-    { "label": "Home", "to": "/" },
-    { "label": "Collections", "to": "/collections" }
+    {
+      "label": "Home",
+      "to": "/"
+    },
+    {
+      "label": "Collections",
+      "to": "/collections"
+    }
   ],
   "home": {
     "seoTitle": "Royal Tide General Trading LLC SPC | Hospitality Supplies UAE",
@@ -39,9 +45,18 @@
       "imageAlt": "High-Alumina Vitrified Fine Porcelain plate with gold rim",
       "materialSpec": "High-Alumina Vitrified Fine Porcelain",
       "stats": [
-        { "value": "100%", "label": "COMMERCIAL\\nGRADE" },
-        { "value": "300+", "label": "PRE-APPROVED\\nLINES" },
-        { "value": "UAE", "label": "CENTRAL HUB" }
+        {
+          "value": "100%",
+          "label": "COMMERCIAL\\nGRADE"
+        },
+        {
+          "value": "300+",
+          "label": "PRE-APPROVED\\nLINES"
+        },
+        {
+          "value": "UAE",
+          "label": "CENTRAL HUB"
+        }
       ],
       "features": [
         {
@@ -407,7 +422,7 @@
       "title": "Commercial Cookware & Kitchen Utensils",
       "subtitle": "Professional Chef Cookware & Prep Essentials",
       "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, prep containers, and desktop/countertop kitchen essentials.",
-      "heroImage": "/cookware.jpg",
+      "heroImage": "/catogory5.jpg",
       "products": [
         {
           "name": "Heavy-Duty Stock Pot",
@@ -477,7 +492,13 @@
         "/gallery3.png",
         "/gallery4.png",
         "/gallery5.png",
-        "/gallery6.png"
+        "/gallery6.png",
+        "/gallery7.png",
+        "/gallery8.png",
+        "/gallery9.png",
+        "/gallery10.png"
+       
+        
       ]
     }
   },
