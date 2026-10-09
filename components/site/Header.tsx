@@ -48,6 +48,12 @@ export function Header() {
               <Phone className="text-gold/80" size={12} />
               <span>{content.contact.phoneDisplay}</span>
             </a>
+            {content.contact.telephone && (
+              <a href={`tel:${content.contact.telephoneHref}`} className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200 text-gray-300">
+                <Phone className="text-gold/80" size={12} />
+                <span>Tel: {content.contact.telephone}</span>
+              </a>
+            )}
             <div className="hidden sm:flex items-center gap-2">
               <MapPin className="text-gold" size={14} />
               <span>{content.contact.addressDisplay}</span>

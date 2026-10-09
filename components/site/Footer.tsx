@@ -70,13 +70,28 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
-              <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
-                {contact.phoneDisplay}
-              </a>
+              <div className="flex flex-col gap-1">
+                <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
+                  {contact.phoneDisplay}
+                </a>
+                {contact.phoneSecondary && (
+                  <a href={`tel:${contact.phoneSecondaryHref}`} className="hover:text-gold transition-colors">
+                    {contact.phoneSecondary}
+                  </a>
+                )}
+                {contact.telephone && (
+                  <a href={`tel:${contact.telephoneHref}`} className="hover:text-gold transition-colors">
+                    Tel: {contact.telephone}
+                  </a>
+                )}
+              </div>
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{contact.addressDisplay}</span>
+              <div className="flex flex-col">
+                <span>{contact.addressDisplay}</span>
+                <span className="text-xs text-muted-foreground/80">{contact.location}</span>
+              </div>
             </li>
           </FooterColumn>
         </div>

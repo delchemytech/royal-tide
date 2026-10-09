@@ -8,13 +8,18 @@
   "contact": {
     "emailInfo": "info@royaltides.ae",
     "emailSales": "sales@royaltides.ae",
-    "phoneDisplay": "+1 234 567 8900 | +1 987 654 3210",
-    "phoneHref": "+12345678900",
-    "whatsappNumber": "+19876543210",
-    "whatsappDisplay": "+1 987 654 3210",
+    "phoneDisplay": "+971 50 600 8445",
+    "phoneHref": "+971506008445",
+    "phoneSecondary": "+971 55 878 7517",
+    "phoneSecondaryHref": "+971558787517",
+    "telephone": "+971 2 675 1255",
+    "telephoneHref": "+97126751255",
+    "whatsappNumber": "+971506008445",
+    "whatsappDisplay": "+971 50 600 8445",
     "whatsappMessage": "Hi Royal Tide, I would like to inquire about your hospitality collections.",
     "location": "United Arab Emirates",
-    "addressDisplay": "123 Demo Street, Demo City, Demo Country",
+    "addressDisplay": "Musaffah M37, Plot No. 135, Abu Dhabi, UAE",
+    "fullAddress": "Royal Tide, Musaffah M37, Plot No. 135, Abu Dhabi, United Arab Emirates",
     "hours": "Sunday – Thursday, 9:00 AM – 6:00 PM"
   },
   "nav": [
@@ -525,7 +530,7 @@
     },
     "mapCard": {
       "title": "UAE Operations",
-      "text": "Royal Tide General Trading LLC SPC operates from the United Arab Emirates, supplying hospitality clients across the Emirates."
+      "text": "Royal Tide General Trading LLC SPC operates from Musaffah M37 (Plot No. 135), Abu Dhabi, supplying hospitality clients across the United Arab Emirates."
     }
   }
 }
