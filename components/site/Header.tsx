@@ -41,16 +41,31 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex flex-col items-center">
       {/* ─── TOP BLACK BAR ─── */}
-      <div className="w-full bg-[#1A1A1A] text-white py-2.5">
-        <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-4 text-[0.75rem] font-medium tracking-wide">
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-            <a href={`tel:${content.contact.phoneHref}`} className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200">
-              <Phone className="text-gold/80" size={12} />
+      <div className="w-full bg-[#1A1A1A] text-white py-2 sm:py-2.5">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-3 text-[0.72rem] sm:text-[0.75rem] font-medium tracking-wide">
+          <div className="flex flex-wrap items-center gap-x-3.5 sm:gap-x-7 gap-y-1">
+            <a
+              href={`tel:${content.contact.phoneHref}`}
+              className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200 whitespace-nowrap"
+            >
+              <Phone className="text-gold/80 shrink-0" size={12} />
               <span>{content.contact.phoneDisplay}</span>
             </a>
+            {content.contact.phoneSecondary && (
+              <a
+                href={`tel:${content.contact.phoneSecondaryHref}`}
+                className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200 whitespace-nowrap"
+              >
+                <Phone className="text-gold/80 shrink-0" size={12} />
+                <span>{content.contact.phoneSecondary}</span>
+              </a>
+            )}
             {content.contact.telephone && (
-              <a href={`tel:${content.contact.telephoneHref}`} className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200 text-gray-300">
-                <Phone className="text-gold/80" size={12} />
+              <a
+                href={`tel:${content.contact.telephoneHref}`}
+                className="hidden md:flex items-center gap-1.5 hover:text-gold transition-colors duration-200 text-gray-300 whitespace-nowrap"
+              >
+                <Phone className="text-gold/80 shrink-0" size={12} />
                 <span>Tel: {content.contact.telephone}</span>
               </a>
             )}
@@ -58,7 +73,7 @@ export function Header() {
               href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 hover:text-gold transition-colors duration-200"
+              className="hidden lg:flex items-center gap-2 hover:text-gold transition-colors duration-200"
               title="Open Google Maps Location"
             >
               <MapPin className="text-gold" size={14} />
@@ -68,7 +83,7 @@ export function Header() {
               href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
               target="_blank"
               rel="noreferrer"
-              className="hidden md:flex items-center gap-1.5 hover:text-gold transition-colors duration-200"
+              className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200"
             >
               <Mail className="text-gold/80" size={12} />
               <span>{content.contact.emailSales}</span>
@@ -178,6 +193,34 @@ export function Header() {
             <MessageCircle size={16} aria-hidden="true" />
             Inquire on WhatsApp
           </a>
+
+          <div className="mt-5 pt-4 border-t border-gray-100 flex flex-col gap-2.5 text-xs text-navy-deep/80">
+            <a
+              href={`tel:${content.contact.phoneHref}`}
+              className="flex items-center gap-2 hover:text-gold transition-colors font-medium"
+            >
+              <Phone size={13} className="text-gold" />
+              <span>{content.contact.phoneDisplay}</span>
+            </a>
+            {content.contact.phoneSecondary && (
+              <a
+                href={`tel:${content.contact.phoneSecondaryHref}`}
+                className="flex items-center gap-2 hover:text-gold transition-colors font-medium"
+              >
+                <Phone size={13} className="text-gold" />
+                <span>{content.contact.phoneSecondary}</span>
+              </a>
+            )}
+            {content.contact.telephone && (
+              <a
+                href={`tel:${content.contact.telephoneHref}`}
+                className="flex items-center gap-2 hover:text-gold transition-colors font-medium text-gray-500"
+              >
+                <Phone size={13} className="text-gold" />
+                <span>Tel: {content.contact.telephone}</span>
+              </a>
+            )}
+          </div>
         </nav>
       </div>
     </header>
