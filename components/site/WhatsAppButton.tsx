@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export function WhatsAppButton() {
-  const [waLink, setWaLink] = useState("");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setWaLink(whatsappLink());
     setMounted(true);
   }, []);
 
   if (!mounted) return null;
+
+  const waLink = whatsappLink();
 
   return (
     <a

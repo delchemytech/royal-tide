@@ -70,13 +70,44 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
-              <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
-                {contact.phoneDisplay}
-              </a>
+              <div className="flex flex-col gap-1">
+                <a href={`tel:${contact.phoneHref}`} className="hover:text-gold transition-colors">
+                  {contact.phoneDisplay}
+                </a>
+                {contact.phoneSecondary && (
+                  <a href={`tel:${contact.phoneSecondaryHref}`} className="hover:text-gold transition-colors">
+                    {contact.phoneSecondary}
+                  </a>
+                )}
+                {contact.telephone && (
+                  <a href={`tel:${contact.telephoneHref}`} className="hover:text-gold transition-colors">
+                    Tel: {contact.telephone}
+                  </a>
+                )}
+              </div>
             </li>
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{contact.addressDisplay}</span>
+              <div className="flex flex-col">
+                <a
+                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy-deep hover:text-gold transition-colors"
+                >
+                  {company.name}
+                </a>
+                <span>{contact.addressDisplay}</span>
+                <a
+                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gold hover:underline inline-flex items-center gap-1 mt-0.5 font-medium"
+                >
+                  Open in Google Maps &rarr;
+                </a>
+                <span className="text-xs text-muted-foreground/80 mt-0.5">{contact.location}</span>
+              </div>
             </li>
           </FooterColumn>
         </div>

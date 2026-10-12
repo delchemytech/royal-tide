@@ -48,10 +48,22 @@ export function Header() {
               <Phone className="text-gold/80" size={12} />
               <span>{content.contact.phoneDisplay}</span>
             </a>
-            <div className="hidden sm:flex items-center gap-2">
+            {content.contact.telephone && (
+              <a href={`tel:${content.contact.telephoneHref}`} className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200 text-gray-300">
+                <Phone className="text-gold/80" size={12} />
+                <span>Tel: {content.contact.telephone}</span>
+              </a>
+            )}
+            <a
+              href={content.contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 hover:text-gold transition-colors duration-200"
+              title="Open Google Maps Location"
+            >
               <MapPin className="text-gold" size={14} />
               <span>{content.contact.addressDisplay}</span>
-            </div>
+            </a>
             <a
               href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
               target="_blank"
