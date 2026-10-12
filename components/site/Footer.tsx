@@ -90,7 +90,7 @@ export function Footer() {
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
               <div className="flex flex-col">
                 <a
-                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  href={contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-navy-deep hover:text-gold transition-colors"
@@ -99,7 +99,7 @@ export function Footer() {
                 </a>
                 <span>{contact.addressDisplay}</span>
                 <a
-                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  href={contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-gold hover:underline inline-flex items-center gap-1 mt-0.5 font-medium"

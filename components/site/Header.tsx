@@ -55,7 +55,7 @@ export function Header() {
               </a>
             )}
             <a
-              href={content.contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 hover:text-gold transition-colors duration-200"

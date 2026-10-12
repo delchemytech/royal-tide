@@ -20,7 +20,7 @@
     "location": "United Arab Emirates",
     "addressDisplay": "Musaffah M37, Plot No. 135, Abu Dhabi, UAE",
     "fullAddress": "Royal Tide General Trading LLC SPC, Musaffah M37, Plot No. 135, Abu Dhabi, United Arab Emirates",
-    "googleMapsUrl": "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434",
     "mapEmbedUrl": "https://maps.google.com/maps?q=24.3530024,54.4995434+(Royal%20Tide%20General%20Trading%20LLC%20SPC)&t=&z=16&ie=UTF8&iwloc=&output=embed",
     "coordinates": {
       "lat": 24.3530024,
@@ -539,7 +539,7 @@
       "text": "Royal Tide General Trading LLC SPC operates from Musaffah M37 (Plot No. 135), Abu Dhabi, supplying hospitality clients across the United Arab Emirates.",
       "businessName": "Royal Tide General Trading LLC SPC",
       "address": "Musaffah M37, Plot No. 135, Abu Dhabi, UAE",
-      "googleMapsUrl": "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434",
       "mapEmbedUrl": "https://maps.google.com/maps?q=24.3530024,54.4995434+(Royal%20Tide%20General%20Trading%20LLC%20SPC)&t=&z=16&ie=UTF8&iwloc=&output=embed"
     }
   }

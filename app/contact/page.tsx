@@ -241,7 +241,7 @@ export default function ContactPage() {
                   <span className="font-semibold text-navy-deep">{company.name}</span>
                   <span className="block">{contact.addressDisplay}</span>
                   <a
-                    href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                    href={contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-gold hover:underline mt-1 font-medium"
@@ -276,14 +276,15 @@ export default function ContactPage() {
                   title="Royal Tide General Trading LLC SPC Location Map"
                 />
               </div>
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 pt-1 text-xs text-muted-foreground">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 pt-1 text-xs text-muted-foreground">
                 <span className="font-medium text-navy-deep/80">{company.name} · {contactPage.mapCard.address || contact.addressDisplay}</span>
                 <a
-                  href={contactPage.mapCard.googleMapsUrl || contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  href={contactPage.mapCard.googleMapsUrl || contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-gold hover:underline inline-flex items-center gap-1"
+                  className="font-semibold text-gold hover:underline inline-flex items-center gap-1.5"
                 >
+                  <MapPin size={13} className="text-gold" />
                   Open in Google Maps &rarr;
                 </a>
               </div>
