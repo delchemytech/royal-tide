@@ -5,6 +5,31 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import content from "@/data/content.json";
+
+const { company, contact } = content;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: company.name,
+  url: `https://${company.domain}`,
+  telephone: contact.phoneHref,
+  email: contact.emailSales,
+  hasMap: contact.googleMapsUrl,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Musaffah M37, Plot No. 135",
+    addressLocality: "Abu Dhabi",
+    addressCountry: "AE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 24.3530024,
+    longitude: 54.4995434,
+  },
+  openingHours: "Su-Th 09:00-18:00",
+};
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -45,6 +70,12 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${playfair.variable} ${manrope.variable} ${dmSans.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased">
         <Header />
         <main id="main">{children}</main>

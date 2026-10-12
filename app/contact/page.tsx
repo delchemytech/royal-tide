@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
 import { content, whatsappLink } from "@/lib/site";
 
-const { contactPage, contact } = content;
+const { contactPage, contact, company } = content;
 
 const field =
   "mt-2 w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-gold focus:ring-1 focus:ring-gold/30";
@@ -147,7 +147,7 @@ export default function ContactPage() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: "8e02f809-f68b-44f3-8e6f-d6ceaa9431c3",
-          to: "sales@royaltides.ae",
+          to: contact.emailSales || "sales@royaltide.ae",
           subject: `New RFQ from ${safe.name} — ${safe.company}`,
           ...safe,
         }),
@@ -238,9 +238,17 @@ export default function ContactPage() {
                   </a>
                 </InfoRow>
                 <InfoRow icon={<MapPin size={18} />} title="Trade Location">
-                  <span>Royal Tide</span>
+                  <span className="font-semibold text-navy-deep">{company.name}</span>
                   <span className="block">{contact.addressDisplay}</span>
-                  <span className="block text-muted-foreground text-xs">{contact.location}</span>
+                  <a
+                    href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-gold hover:underline mt-1 font-medium"
+                  >
+                    View on Google Maps &rarr;
+                  </a>
+                  <span className="block text-muted-foreground text-xs mt-0.5">{contact.location}</span>
                 </InfoRow>
                 <InfoRow icon={<Clock size={18} />} title="Working Hours">
                   {contact.hours}
@@ -258,25 +266,25 @@ export default function ContactPage() {
               </p>
               <div className="mt-6 overflow-hidden rounded-lg border border-border bg-card aspect-[16/9]">
                 <iframe
-                  src="https://maps.google.com/maps?q=Plot%20135,%20Musaffah%20M37,%20Abu%20Dhabi,%20United%20Arab%20Emirates&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src={contactPage.mapCard.mapEmbedUrl || contact.mapEmbedUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Royal Tide Musaffah M37 Map Location"
+                  title="Royal Tide General Trading LLC SPC Location Map"
                 />
               </div>
               <div className="mt-4 flex flex-wrap items-center justify-between gap-2 pt-1 text-xs text-muted-foreground">
-                <span>Plot No. 135, Musaffah M37, Abu Dhabi</span>
+                <span className="font-medium text-navy-deep/80">{company.name} · {contactPage.mapCard.address || contact.addressDisplay}</span>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Plot+135+Musaffah+M37+Abu+Dhabi"
+                  href={contactPage.mapCard.googleMapsUrl || contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-gold hover:underline inline-flex items-center gap-1"
                 >
-                  View on Google Maps &rarr;
+                  Open in Google Maps &rarr;
                 </a>
               </div>
             </Reveal>

@@ -54,10 +54,16 @@ export function Header() {
                 <span>Tel: {content.contact.telephone}</span>
               </a>
             )}
-            <div className="hidden sm:flex items-center gap-2">
+            <a
+              href={content.contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 hover:text-gold transition-colors duration-200"
+              title="Open Google Maps Location"
+            >
               <MapPin className="text-gold" size={14} />
               <span>{content.contact.addressDisplay}</span>
-            </div>
+            </a>
             <a
               href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
               target="_blank"

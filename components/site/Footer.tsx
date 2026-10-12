@@ -89,8 +89,24 @@ export function Footer() {
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
               <div className="flex flex-col">
+                <a
+                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy-deep hover:text-gold transition-colors"
+                >
+                  {company.name}
+                </a>
                 <span>{contact.addressDisplay}</span>
-                <span className="text-xs text-muted-foreground/80">{contact.location}</span>
+                <a
+                  href={contact.googleMapsUrl || "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gold hover:underline inline-flex items-center gap-1 mt-0.5 font-medium"
+                >
+                  Open in Google Maps &rarr;
+                </a>
+                <span className="text-xs text-muted-foreground/80 mt-0.5">{contact.location}</span>
               </div>
             </li>
           </FooterColumn>

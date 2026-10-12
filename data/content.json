@@ -2,12 +2,12 @@
   "company": {
     "name": "Royal Tide General Trading LLC SPC",
     "shortName": "Royal Tide",
-    "domain": "royaltides.ae",
+    "domain": "royaltide.ae",
     "copyright": "© 2026 Royal Tide General Trading LLC SPC. All rights reserved."
   },
   "contact": {
-    "emailInfo": "info@royaltides.ae",
-    "emailSales": "sales@royaltides.ae",
+    "emailInfo": "info@royaltide.ae",
+    "emailSales": "sales@royaltide.ae",
     "phoneDisplay": "+971 50 600 8445",
     "phoneHref": "+971506008445",
     "phoneSecondary": "+971 55 878 7517",
@@ -19,7 +19,13 @@
     "whatsappMessage": "Hi Royal Tide, I would like to inquire about your hospitality collections.",
     "location": "United Arab Emirates",
     "addressDisplay": "Musaffah M37, Plot No. 135, Abu Dhabi, UAE",
-    "fullAddress": "Royal Tide, Musaffah M37, Plot No. 135, Abu Dhabi, United Arab Emirates",
+    "fullAddress": "Royal Tide General Trading LLC SPC, Musaffah M37, Plot No. 135, Abu Dhabi, United Arab Emirates",
+    "googleMapsUrl": "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=24.3530024,54.4995434+(Royal%20Tide%20General%20Trading%20LLC%20SPC)&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "coordinates": {
+      "lat": 24.3530024,
+      "lng": 54.4995434
+    },
     "hours": "Sunday – Thursday, 9:00 AM – 6:00 PM"
   },
   "nav": [
@@ -509,7 +515,7 @@
   },
   "contactPage": {
     "seoTitle": "Contact Us | Royal Tide General Trading LLC SPC",
-    "seoDescription": "Contact Royal Tide General Trading LLC SPC for hospitality supply enquiries and RFQs. Email info@royaltides.ae or sales@royaltides.ae, or chat with our team on WhatsApp.",
+    "seoDescription": "Contact Royal Tide General Trading LLC SPC for hospitality supply enquiries and RFQs. Email info@royaltide.ae or sales@royaltide.ae, or chat with our team on WhatsApp.",
     "hero": {
       "eyebrow": "Contact",
       "title": "Talk to Our Sourcing Team",
@@ -529,8 +535,12 @@
       "success": "Thank you — your enquiry has been recorded. Our team will be in touch."
     },
     "mapCard": {
-      "title": "UAE Operations",
-      "text": "Royal Tide General Trading LLC SPC operates from Musaffah M37 (Plot No. 135), Abu Dhabi, supplying hospitality clients across the United Arab Emirates."
+      "title": "UAE Operations & Trade Location",
+      "text": "Royal Tide General Trading LLC SPC operates from Musaffah M37 (Plot No. 135), Abu Dhabi, supplying hospitality clients across the United Arab Emirates.",
+      "businessName": "Royal Tide General Trading LLC SPC",
+      "address": "Musaffah M37, Plot No. 135, Abu Dhabi, UAE",
+      "googleMapsUrl": "https://maps.app.goo.gl/uJcebNcgCx6YyuHE8",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=24.3530024,54.4995434+(Royal%20Tide%20General%20Trading%20LLC%20SPC)&t=&z=16&ie=UTF8&iwloc=&output=embed"
     }
   }
 }
