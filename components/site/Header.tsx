@@ -70,35 +70,41 @@ export function Header() {
               </a>
             )}
             <a
-              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-2 hover:text-gold transition-colors duration-200"
-              title="Open Google Maps Location"
-            >
-              <MapPin className="text-gold" size={14} />
-              <span>{content.contact.addressDisplay}</span>
-            </a>
-            <a
               href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
               target="_blank"
               rel="noreferrer"
               className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200"
             >
-              <Mail className="text-gold/80" size={12} />
+              <Mail className="text-gold/80 shrink-0" size={12} />
               <span>{content.contact.emailSales}</span>
             </a>
           </div>
-          <div className="hidden lg:flex items-center gap-5">
-            <span className="text-gray-400 text-[0.65rem] font-bold">FOLLOW US:</span>
-            <a href="#" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
-              <span>Royal Tide</span>
+
+          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+            <a
+              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-gold hover:text-white transition-colors duration-200 font-semibold px-2.5 py-0.5 rounded-full bg-white/5 border border-gold/40 hover:border-gold text-[0.68rem] sm:text-[0.72rem] whitespace-nowrap"
+              title="Open Google Maps Location"
+            >
+              <MapPin className="text-gold shrink-0" size={12} />
+              <span className="inline sm:hidden">Location</span>
+              <span className="hidden sm:inline lg:hidden">Abu Dhabi, UAE</span>
+              <span className="hidden lg:inline">{content.contact.addressDisplay}</span>
             </a>
+
+            <div className="hidden lg:flex items-center gap-5 pl-3 border-l border-white/10">
+              <span className="text-gray-400 text-[0.65rem] font-bold">FOLLOW US:</span>
+              <a href="#" className="flex items-center gap-1.5 hover:text-gold transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+                <span>Royal Tide</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -142,86 +148,165 @@ export function Header() {
             </ul>
           </nav>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 text-navy-deep transition-colors lg:hidden hover:bg-gray-50 ml-auto"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden ml-auto">
+            <a
+              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Location on Google Maps"
+              title="View Location on Google Maps"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold hover:bg-gold/10 transition-colors"
+            >
+              <MapPin size={18} />
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-navy-deep transition-colors hover:bg-gray-50"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* ─── MOBILE MENU ─── */}
+      {/* ─── MOBILE BACKDROP ─── */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden",
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* ─── MOBILE DRAWER MENU ─── */}
       <div
         id="mobile-menu"
         className={cn(
-          "absolute left-4 right-4 top-24 z-10 overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 lg:hidden border border-gray-100",
-          open ? "max-h-[32rem] opacity-100 pointer-events-auto translate-y-0" : "max-h-0 opacity-0 pointer-events-none -translate-y-4"
+          "fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-out lg:hidden flex flex-col justify-between overflow-y-auto",
+          open ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav aria-label="Mobile" className="px-6 py-6">
-          <ul className="space-y-2">
-            {nav.map((item) => {
-              const active = isActive(item.to);
-              return (
-                <li key={item.to}>
-                  <Link
-                    href={item.to}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "block rounded-xl px-4 py-3 text-sm font-bold transition-colors",
-                      active ? "bg-gold/10 text-gold" : "text-navy-deep hover:bg-gray-50"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <a
-            href={wa}
-            target={wa.startsWith("http") ? "_blank" : undefined}
-            rel="noreferrer"
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
+          <Logo />
+          <button
+            type="button"
             onClick={() => setOpen(false)}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 text-sm font-bold text-navy-deep transition-colors hover:bg-gold/90"
+            aria-label="Close menu"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-navy-deep hover:bg-gray-50 transition-colors"
           >
-            <MessageCircle size={16} aria-hidden="true" />
-            Inquire on WhatsApp
-          </a>
+            <X size={20} />
+          </button>
+        </div>
 
-          <div className="mt-5 pt-4 border-t border-gray-100 flex flex-col gap-2.5 text-xs text-navy-deep/80">
+        {/* Drawer Body */}
+        <div className="px-6 py-6 flex-1 flex flex-col justify-between gap-6 overflow-y-auto">
+          {/* Navigation Links */}
+          <nav aria-label="Mobile Navigation">
+            <p className="text-[0.68rem] font-bold text-gray-400 uppercase tracking-widest mb-3">Navigation</p>
+            <ul className="space-y-1.5">
+              {nav.map((item) => {
+                const active = isActive(item.to);
+                return (
+                  <li key={item.to}>
+                    <Link
+                      href={item.to}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold transition-colors",
+                        active ? "bg-gold/10 text-gold" : "text-navy-deep hover:bg-gray-50"
+                      )}
+                    >
+                      <span>{item.label}</span>
+                      <span className={cn("text-xs font-normal", active ? "text-gold" : "text-gray-400")}>→</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Quick Collections */}
+            <div className="mt-5 pt-5 border-t border-gray-100">
+              <p className="text-[0.68rem] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Hospitality Collections</p>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {[
+                  { name: "Tableware", href: "/collections/tableware" },
+                  { name: "Glassware", href: "/collections/glassware" },
+                  { name: "Linen", href: "/collections/linen" },
+                  { name: "Buffet", href: "/collections/buffet" },
+                ].map((cat) => (
+                  <Link
+                    key={cat.name}
+                    href={cat.href}
+                    onClick={() => setOpen(false)}
+                    className="px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-gold/10 hover:text-gold text-navy-deep/80 font-medium transition-colors"
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </nav>
+
+          {/* Primary CTA */}
+          <div>
             <a
-              href={`tel:${content.contact.phoneHref}`}
-              className="flex items-center gap-2 hover:text-gold transition-colors font-medium"
+              href={wa}
+              target={wa.startsWith("http") ? "_blank" : undefined}
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3.5 text-sm font-bold text-navy-deep shadow-md transition-all hover:bg-gold/90 hover:shadow-lg"
             >
-              <Phone size={13} className="text-gold" />
-              <span>{content.contact.phoneDisplay}</span>
+              <MessageCircle size={18} aria-hidden="true" />
+              Inquire on WhatsApp
             </a>
-            {content.contact.phoneSecondary && (
-              <a
-                href={`tel:${content.contact.phoneSecondaryHref}`}
-                className="flex items-center gap-2 hover:text-gold transition-colors font-medium"
-              >
-                <Phone size={13} className="text-gold" />
-                <span>{content.contact.phoneSecondary}</span>
-              </a>
-            )}
+          </div>
+
+          {/* Contact Details (Landline, Email, Showroom Location - NO duplicate mobile numbers) */}
+          <div className="pt-5 border-t border-gray-100 flex flex-col gap-3 text-xs text-navy-deep/80">
             {content.contact.telephone && (
               <a
                 href={`tel:${content.contact.telephoneHref}`}
-                className="flex items-center gap-2 hover:text-gold transition-colors font-medium text-gray-500"
+                className="flex items-center gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep"
               >
-                <Phone size={13} className="text-gold" />
-                <span>Tel: {content.contact.telephone}</span>
+                <Phone size={14} className="text-gold shrink-0" />
+                <span>Office Tel: {content.contact.telephone}</span>
               </a>
             )}
+            <a
+              href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep"
+            >
+              <Mail size={14} className="text-gold shrink-0" />
+              <span>{content.contact.emailSales}</span>
+            </a>
+            <a
+              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep group"
+            >
+              <MapPin size={14} className="text-gold shrink-0 mt-0.5" />
+              <span className="flex-1">
+                {content.contact.addressDisplay}
+                <span className="block text-[0.65rem] text-gold font-bold group-hover:underline mt-0.5">
+                  Open in Google Maps ↗
+                </span>
+              </span>
+            </a>
+            <div className="text-[0.68rem] text-gray-400 pt-2 border-t border-gray-50 flex items-center justify-between">
+              <span>{content.contact.hours}</span>
+              <span className="font-semibold text-navy-deep/70">Abu Dhabi, UAE</span>
+            </div>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );
