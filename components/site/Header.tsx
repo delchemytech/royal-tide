@@ -149,16 +149,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2 lg:hidden ml-auto">
-            <a
-              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Location on Google Maps"
-              title="View Location on Google Maps"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold hover:bg-gold/10 transition-colors"
-            >
-              <MapPin size={18} />
-            </a>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
