@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { btn } from "@/components/site/Button";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
@@ -132,7 +133,7 @@ export function CategoryPage({ category }: { category: CategoryData }) {
                 rel="noreferrer"
                 className={cn(btn({ variant: "gold" }))}
               >
-                <MessageCircle size={16} aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
                 Inquire on WhatsApp
               </a>
               <Link

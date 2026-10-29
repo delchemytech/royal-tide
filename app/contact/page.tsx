@@ -1,9 +1,10 @@
 "use client";
 
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState, useRef, type FormEvent, type ChangeEvent, type FocusEvent } from "react";
 import { ActionButton, btn } from "@/components/site/Button";
 import { Reveal } from "@/components/site/Reveal";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { cn } from "@/lib/utils";
 import { content, whatsappLink } from "@/lib/site";
 
@@ -186,7 +187,7 @@ export default function ContactPage() {
             rel="noreferrer"
             className={cn(btn({ variant: "gold" }), "mt-9")}
           >
-            <MessageCircle size={16} aria-hidden="true" />
+            <WhatsAppIcon className="h-4.5 w-4.5" aria-hidden="true" />
             Chat on WhatsApp
           </a>
         </div>
@@ -232,7 +233,7 @@ export default function ContactPage() {
                     </a>
                   </InfoRow>
                 )}
-                <InfoRow icon={<MessageCircle size={18} />} title="WhatsApp">
+                <InfoRow icon={<WhatsAppIcon className="h-4.5 w-4.5" />} title="WhatsApp">
                   <a href={wa} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
                     {contact.whatsappDisplay}
                   </a>

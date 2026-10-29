@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { content, whatsappLink } from "@/lib/site";
 import { btn } from "./Button";
 import { Logo } from "./Logo";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -36,7 +37,7 @@ export function Footer() {
               rel="noreferrer"
               className={cn(btn({ variant: "gold", size: "sm" }), "mt-7")}
             >
-              <MessageCircle size={15} aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
               Inquire on WhatsApp
             </a>
           </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { SectionHeading } from "@/components/site/Section";
 import { btn } from "@/components/site/Button";
 import { cn } from "@/lib/utils";
@@ -256,7 +257,7 @@ export default function CollectionsPage() {
                   rel="noreferrer"
                   className={cn(btn({ variant: "gold" }), "w-full sm:w-auto h-12 px-6 shadow-xl shadow-gold/10")}
                 >
-                  <MessageCircle size={18} aria-hidden="true" />
+                  <WhatsAppIcon className="h-4.5 w-4.5" aria-hidden="true" />
                   Chat on WhatsApp
                 </a>
                 <Link

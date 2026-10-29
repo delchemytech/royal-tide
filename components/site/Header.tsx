@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, MessageCircle, X, Phone, MapPin, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { content, whatsappLink } from "@/lib/site";
 import { Logo } from "./Logo";
 
 const nav = [
-  { label: "Home", to: "/" },
   { label: "Collections", to: "/collections" },
+  { label: "About", to: "/#about" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
@@ -17,10 +16,9 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const wa = whatsappLink();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -35,95 +33,28 @@ export function Header() {
 
   function isActive(to: string) {
     if (to === "/") return pathname === "/";
+    if (to.startsWith("/#")) return pathname === "/" && typeof window !== "undefined" && window.location.hash === to.slice(1);
     return pathname.startsWith(to);
   }
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex flex-col items-center">
-      {/* ─── TOP BLACK BAR ─── */}
-      <div className="w-full bg-[#1A1A1A] text-white py-2 sm:py-2.5">
-        <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-3 text-[0.72rem] sm:text-[0.75rem] font-medium tracking-wide">
-          <div className="flex flex-wrap items-center gap-x-3.5 sm:gap-x-7 gap-y-1">
-            <a
-              href={`tel:${content.contact.phoneHref}`}
-              className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200 whitespace-nowrap"
-            >
-              <Phone className="text-gold/80 shrink-0" size={12} />
-              <span>{content.contact.phoneDisplay}</span>
-            </a>
-            {content.contact.phoneSecondary && (
-              <a
-                href={`tel:${content.contact.phoneSecondaryHref}`}
-                className="flex items-center gap-1.5 hover:text-gold transition-colors duration-200 whitespace-nowrap"
-              >
-                <Phone className="text-gold/80 shrink-0" size={12} />
-                <span>{content.contact.phoneSecondary}</span>
-              </a>
-            )}
-            {content.contact.telephone && (
-              <a
-                href={`tel:${content.contact.telephoneHref}`}
-                className="hidden md:flex items-center gap-1.5 hover:text-gold transition-colors duration-200 text-gray-300 whitespace-nowrap"
-              >
-                <Phone className="text-gold/80 shrink-0" size={12} />
-                <span>Tel: {content.contact.telephone}</span>
-              </a>
-            )}
-            <a
-              href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden xl:flex items-center gap-1.5 hover:text-gold transition-colors duration-200"
-            >
-              <Mail className="text-gold/80 shrink-0" size={12} />
-              <span>{content.contact.emailSales}</span>
-            </a>
-          </div>
-
-          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
-            <a
-              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gold hover:text-white transition-colors duration-200 font-semibold px-2.5 py-0.5 rounded-full bg-white/5 border border-gold/40 hover:border-gold text-[0.68rem] sm:text-[0.72rem] whitespace-nowrap"
-              title="Open Google Maps Location"
-            >
-              <MapPin className="text-gold shrink-0" size={12} />
-              <span className="inline sm:hidden">Location</span>
-              <span className="hidden sm:inline lg:hidden">Abu Dhabi, UAE</span>
-              <span className="hidden lg:inline">{content.contact.addressDisplay}</span>
-            </a>
-
-            <div className="hidden lg:flex items-center gap-5 pl-3 border-l border-white/10">
-              <span className="text-gray-400 text-[0.65rem] font-bold">FOLLOW US:</span>
-              <a href="#" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-                <span>Royal Tide</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ─── FLOATING PILL NAV ─── */}
       <div
         className={cn(
           "w-full max-w-[90rem] mx-auto px-4 sm:px-8 transition-all duration-300",
-          scrolled ? "mt-0" : "mt-5"
+          scrolled ? "mt-2 sm:mt-3" : "mt-4 sm:mt-6"
         )}
       >
-        <div className="flex h-[4.5rem] items-center justify-between gap-6 rounded-full bg-white px-6 sm:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 relative z-20">
-
-          <div className="shrink-0 lg:flex-1 flex justify-start transition-opacity duration-300">
+        <div className="flex h-16 sm:h-[4.5rem] items-center justify-between gap-4 sm:gap-6 rounded-full bg-white/95 backdrop-blur-md px-5 sm:px-8 shadow-[0_10px_35px_rgba(0,0,0,0.08)] border border-gray-100/90 relative z-20">
+          {/* Left: Brand Logo (Links to Home) */}
+          <div className="shrink-0 lg:flex-1 flex justify-start items-center">
             <Logo />
           </div>
 
-          <nav aria-label="Main" className="hidden lg:flex flex-1 justify-end lg:justify-center">
-            <ul className="flex items-center gap-2">
+          {/* Center: Main Navigation */}
+          <nav aria-label="Main" className="hidden lg:flex flex-1 justify-center">
+            <ul className="flex items-center gap-1 sm:gap-2">
               {nav.map((item) => {
                 const active = isActive(item.to);
                 return (
@@ -131,7 +62,7 @@ export function Header() {
                     <Link
                       href={item.to}
                       className={cn(
-                        "px-5 py-2 text-[0.85rem] font-bold transition-all duration-300 rounded-full",
+                        "px-4 py-2 text-[0.85rem] font-bold transition-all duration-200 rounded-full",
                         active
                           ? "text-gold"
                           : "text-navy-deep/80 hover:text-navy-deep hover:bg-navy-deep/5"
@@ -148,6 +79,17 @@ export function Header() {
             </ul>
           </nav>
 
+          {/* Right: Quick Action CTAs (Desktop) */}
+          <div className="hidden lg:flex flex-1 justify-end items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-navy-deep px-5 py-2.5 text-[0.82rem] font-bold text-sand transition-all hover:bg-gold hover:text-navy-deep shadow-sm"
+            >
+              <span>Get a Quote</span>
+            </Link>
+          </div>
+
+          {/* Mobile Hamburger Toggle */}
           <div className="flex items-center gap-2 lg:hidden ml-auto">
             <button
               type="button"
@@ -200,7 +142,12 @@ export function Header() {
           <nav aria-label="Mobile Navigation">
             <p className="text-[0.68rem] font-bold text-gray-400 uppercase tracking-widest mb-3">Navigation</p>
             <ul className="space-y-1.5">
-              {nav.map((item) => {
+              {[
+                { label: "Home", to: "/" },
+                { label: "Collections", to: "/collections" },
+                { label: "About Royal Tide", to: "/#about" },
+                { label: "Contact Us", to: "/contact" },
+              ].map((item) => {
                 const active = isActive(item.to);
                 return (
                   <li key={item.to}>
@@ -229,6 +176,7 @@ export function Header() {
                   { name: "Glassware", href: "/collections/glassware" },
                   { name: "Linen", href: "/collections/linen" },
                   { name: "Buffet", href: "/collections/buffet" },
+                  { name: "Cutlery", href: "/collections/cutlery" },
                 ].map((cat) => (
                   <Link
                     key={cat.name}
@@ -243,61 +191,38 @@ export function Header() {
             </div>
           </nav>
 
-          {/* Primary CTA */}
-          <div>
-            <a
-              href={wa}
-              target={wa.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
+          {/* Primary Actions (Matching Desktop Navbar) */}
+          <div className="space-y-2.5">
+            <Link
+              href="/contact"
               onClick={() => setOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3.5 text-sm font-bold text-navy-deep shadow-md transition-all hover:bg-gold/90 hover:shadow-lg"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-navy-deep px-5 py-3.5 text-sm font-bold text-sand shadow-sm transition-all hover:bg-gold hover:text-navy-deep"
             >
-              <MessageCircle size={18} aria-hidden="true" />
-              Inquire on WhatsApp
-            </a>
+              <span>Get a Quote</span>
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-navy-deep/20 px-4 py-3 text-xs font-bold text-navy-deep transition-all hover:bg-navy-deep hover:text-sand"
+            >
+              Contact Sales &amp; Showroom
+            </Link>
           </div>
 
-          {/* Contact Details (Landline, Email, Showroom Location - NO duplicate mobile numbers) */}
-          <div className="pt-5 border-t border-gray-100 flex flex-col gap-3 text-xs text-navy-deep/80">
-            {content.contact.telephone && (
-              <a
-                href={`tel:${content.contact.telephoneHref}`}
-                className="flex items-center gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep"
-              >
-                <Phone size={14} className="text-gold shrink-0" />
-                <span>Office Tel: {content.contact.telephone}</span>
-              </a>
-            )}
-            <a
-              href={`https://mail.google.com/mail/?view=cm&to=${content.contact.emailSales}`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep"
+          {/* Minimal Location & Contact Page Link (No cluttered telephone directory) */}
+          <div className="pt-4 border-t border-gray-100 text-xs text-navy-deep/70 flex items-center justify-between">
+            <span className="font-semibold">Abu Dhabi, UAE</span>
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="text-gold font-bold hover:underline"
             >
-              <Mail size={14} className="text-gold shrink-0" />
-              <span>{content.contact.emailSales}</span>
-            </a>
-            <a
-              href={content.contact.googleMapsUrl || "https://www.google.com/maps/search/?api=1&query=24.3530024,54.4995434"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-2.5 hover:text-gold transition-colors font-medium text-navy-deep group"
-            >
-              <MapPin size={14} className="text-gold shrink-0 mt-0.5" />
-              <span className="flex-1">
-                {content.contact.addressDisplay}
-                <span className="block text-[0.65rem] text-gold font-bold group-hover:underline mt-0.5">
-                  Open in Google Maps ↗
-                </span>
-              </span>
-            </a>
-            <div className="text-[0.68rem] text-gray-400 pt-2 border-t border-gray-50 flex items-center justify-between">
-              <span>{content.contact.hours}</span>
-              <span className="font-semibold text-navy-deep/70">Abu Dhabi, UAE</span>
-            </div>
+              View Full Details &rarr;
+            </Link>
           </div>
         </div>
       </div>
     </header>
   );
 }
+

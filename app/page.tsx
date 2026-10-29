@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  MessageCircle,
   Hotel,
   UtensilsCrossed,
   Truck,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import { ActionLink } from "@/components/site/Button";
 import { Reveal } from "@/components/site/Reveal";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { SectionHeading } from "@/components/site/Section";
 import { btn } from "@/components/site/Button";
 import { cn } from "@/lib/utils";
@@ -47,7 +47,7 @@ export default function HomePage() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent"
           aria-hidden="true"
         />
-        <div className="container-rt pb-16 pt-24 sm:pb-20 sm:pt-32">
+        <div className="container-rt pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pt-40">
           <div className="max-w-3xl animate-[fadeInUp_0.8s_ease-out_both]">
             <span className="eyebrow">
               <span className="h-px w-6 bg-gold" aria-hidden="true" />
@@ -75,7 +75,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── ABOUT ─── */}
-      <section className="bg-[#FAF9FC] py-12 lg:py-16">
+      <section id="about" className="scroll-mt-24 bg-[#FAF9FC] py-12 lg:py-16">
         <div className="container-rt grid items-start gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
           {/* Left Column: Visuals & Stats */}
           <Reveal className="space-y-4">
@@ -272,7 +272,7 @@ export default function HomePage() {
               rel="noreferrer"
               className={cn(btn({ variant: "outlineLight" }))}
             >
-              <MessageCircle size={16} aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
               Inquire on WhatsApp
             </a>
           </Reveal>
@@ -305,7 +305,7 @@ export default function HomePage() {
                   rel="noreferrer"
                   className={cn(btn({ variant: "gold" }), "w-full sm:w-auto h-12 px-6 shadow-xl shadow-gold/10 rounded-full text-xs tracking-widest uppercase")}
                 >
-                  <MessageCircle size={16} aria-hidden="true" />
+                  <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
                   CHAT ON WHATSAPP
                 </a>
                 <Link
