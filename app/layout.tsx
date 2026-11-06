@@ -27,7 +27,7 @@ const jsonLd = {
     latitude: 24.3530024,
     longitude: 54.4995434,
   },
-  openingHours: "Su-Th 09:00-18:00",
+  openingHours: "Mo-Fr 09:00-18:00",
 };
 
 export const metadata: Metadata = {
