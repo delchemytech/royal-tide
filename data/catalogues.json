@@ -1,0 +1,329 @@
+{
+  "_readme": "Collections are listed in display order. Each brand appears ONLY on the page of its `collection`. `subCollections` are display labels on the card (other ranges the catalogue covers). Collection `image` is used for both the /collections card and the collection page header. Leave any `image` empty for a placeholder. `file` is the catalogue PDF path under /public (e.g. /catalogues/brand.pdf); leave empty to show 'Catalogue coming soon'.",
+  "collections": [
+    {
+      "slug": "tableware",
+      "title": "Tableware",
+      "description": "Bone china, premium porcelain and artisanal pieces composed for memorable service.",
+      "image": "/catogory1.jpg"
+    },
+    {
+      "slug": "flatware",
+      "title": "Flatware",
+      "description": "Polished and matte 18/10 stainless steel selected for balance, finish and durability.",
+      "image": "/catogory2.jpg"
+    },
+    {
+      "slug": "glassware",
+      "title": "Glassware",
+      "description": "Crystal tumblers, stemware and carafes that bring clarity and proportion to every table.",
+      "image": "/catogory3.jpg"
+    },
+    {
+      "slug": "kitchen-utensils",
+      "title": "Kitchen Utensils",
+      "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, and prep essentials.",
+      "image": "/catogory5.jpg"
+    },
+    {
+      "slug": "buffet",
+      "title": "Buffet",
+      "description": "Chafing dishes, risers, display systems and buffet service accessories.",
+      "image": ""
+    },
+    {
+      "slug": "trolleys",
+      "title": "Trolleys",
+      "description": "Room service, housekeeping, banqueting and service trolleys.",
+      "image": ""
+    },
+    {
+      "slug": "table-lights",
+      "title": "Table Lights",
+      "description": "Cordless and decorative table lighting for restaurants, terraces and events.",
+      "image": ""
+    },
+    {
+      "slug": "bar-equipment",
+      "title": "Bar Equipment",
+      "description": "Bar tools, shakers, ice service and back-bar essentials.",
+      "image": ""
+    },
+    {
+      "slug": "minibar-safe-lockers",
+      "title": "Mini Bar & Safe Lockers",
+      "description": "In-room minibars and electronic safe lockers for hotels and serviced apartments.",
+      "image": ""
+    },
+    {
+      "slug": "linen",
+      "title": "Table & Suite Linens",
+      "description": "Textured napkins, runners, bed and bath linens tailored to demanding hotel use.",
+      "image": "/catogory4.jpg"
+    }
+  ],
+  "brands": [
+    {
+      "name": "Aurelia Porcelain",
+      "image": "",
+      "file": "/catalogues/demo/aurelia-porcelain.pdf",
+      "collection": "tableware",
+      "subCollections": [
+        "buffet"
+      ]
+    },
+    {
+      "name": "Maison Calder",
+      "image": "",
+      "file": "/catalogues/demo/maison-calder.pdf",
+      "collection": "tableware",
+      "subCollections": [
+        "glassware",
+        "flatware"
+      ]
+    },
+    {
+      "name": "Stoneleaf Ceramics",
+      "image": "",
+      "file": "/catalogues/demo/stoneleaf-ceramics.pdf",
+      "collection": "tableware",
+      "subCollections": []
+    },
+    {
+      "name": "Verano Bone China",
+      "image": "",
+      "file": "/catalogues/demo/verano-bone-china.pdf",
+      "collection": "tableware",
+      "subCollections": [
+        "linen"
+      ]
+    },
+    {
+      "name": "Kiln & Co",
+      "image": "",
+      "file": "/catalogues/demo/kiln-and-co.pdf",
+      "collection": "tableware",
+      "subCollections": []
+    },
+    {
+      "name": "Hartwell Steel",
+      "image": "",
+      "file": "/catalogues/demo/hartwell-steel.pdf",
+      "collection": "flatware",
+      "subCollections": [
+        "buffet",
+        "kitchen-utensils"
+      ]
+    },
+    {
+      "name": "Lumière Couverts",
+      "image": "",
+      "file": "/catalogues/demo/lumi-re-couverts.pdf",
+      "collection": "flatware",
+      "subCollections": []
+    },
+    {
+      "name": "Northgate Silversmiths",
+      "image": "",
+      "file": "/catalogues/demo/northgate-silversmiths.pdf",
+      "collection": "flatware",
+      "subCollections": [
+        "bar-equipment"
+      ]
+    },
+    {
+      "name": "Cristallo Bianco",
+      "image": "",
+      "file": "/catalogues/demo/cristallo-bianco.pdf",
+      "collection": "glassware",
+      "subCollections": [
+        "bar-equipment"
+      ]
+    },
+    {
+      "name": "Clearwater Glass",
+      "image": "",
+      "file": "/catalogues/demo/clearwater-glass.pdf",
+      "collection": "glassware",
+      "subCollections": []
+    },
+    {
+      "name": "Vetro Fino",
+      "image": "",
+      "file": "/catalogues/demo/vetro-fino.pdf",
+      "collection": "glassware",
+      "subCollections": [
+        "tableware"
+      ]
+    },
+    {
+      "name": "Ember Kitchen Pro",
+      "image": "",
+      "file": "/catalogues/demo/ember-kitchen-pro.pdf",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "buffet"
+      ]
+    },
+    {
+      "name": "ChefLine Industrial",
+      "image": "",
+      "file": "/catalogues/demo/chefline-industrial.pdf",
+      "collection": "kitchen-utensils",
+      "subCollections": []
+    },
+    {
+      "name": "Forgecraft",
+      "image": "",
+      "file": "/catalogues/demo/forgecraft.pdf",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "flatware"
+      ]
+    },
+    {
+      "name": "Grand Banquet Systems",
+      "image": "",
+      "file": "/catalogues/demo/grand-banquet-systems.pdf",
+      "collection": "buffet",
+      "subCollections": [
+        "trolleys"
+      ]
+    },
+    {
+      "name": "Chafer House",
+      "image": "",
+      "file": "/catalogues/demo/chafer-house.pdf",
+      "collection": "buffet",
+      "subCollections": []
+    },
+    {
+      "name": "Display Atelier",
+      "image": "",
+      "file": "/catalogues/demo/display-atelier.pdf",
+      "collection": "buffet",
+      "subCollections": [
+        "tableware"
+      ]
+    },
+    {
+      "name": "Concierge Carts",
+      "image": "",
+      "file": "/catalogues/demo/concierge-carts.pdf",
+      "collection": "trolleys",
+      "subCollections": [
+        "minibar-safe-lockers"
+      ]
+    },
+    {
+      "name": "Roomline Trolleys",
+      "image": "",
+      "file": "/catalogues/demo/roomline-trolleys.pdf",
+      "collection": "trolleys",
+      "subCollections": []
+    },
+    {
+      "name": "Valet Mobility",
+      "image": "",
+      "file": "/catalogues/demo/valet-mobility.pdf",
+      "collection": "trolleys",
+      "subCollections": [
+        "buffet"
+      ]
+    },
+    {
+      "name": "Lanterna Lights",
+      "image": "",
+      "file": "/catalogues/demo/lanterna-lights.pdf",
+      "collection": "table-lights",
+      "subCollections": []
+    },
+    {
+      "name": "Glow Terrace",
+      "image": "",
+      "file": "/catalogues/demo/glow-terrace.pdf",
+      "collection": "table-lights",
+      "subCollections": [
+        "bar-equipment"
+      ]
+    },
+    {
+      "name": "Candela Cordless",
+      "image": "",
+      "file": "/catalogues/demo/candela-cordless.pdf",
+      "collection": "table-lights",
+      "subCollections": []
+    },
+    {
+      "name": "Barcraft Tools",
+      "image": "",
+      "file": "/catalogues/demo/barcraft-tools.pdf",
+      "collection": "bar-equipment",
+      "subCollections": [
+        "glassware"
+      ]
+    },
+    {
+      "name": "Mixology Works",
+      "image": "",
+      "file": "/catalogues/demo/mixology-works.pdf",
+      "collection": "bar-equipment",
+      "subCollections": []
+    },
+    {
+      "name": "Icewell Service",
+      "image": "",
+      "file": "/catalogues/demo/icewell-service.pdf",
+      "collection": "bar-equipment",
+      "subCollections": [
+        "buffet"
+      ]
+    },
+    {
+      "name": "Coolsuite Minibars",
+      "image": "",
+      "file": "/catalogues/demo/coolsuite-minibars.pdf",
+      "collection": "minibar-safe-lockers",
+      "subCollections": []
+    },
+    {
+      "name": "Securo Safes",
+      "image": "",
+      "file": "/catalogues/demo/securo-safes.pdf",
+      "collection": "minibar-safe-lockers",
+      "subCollections": [
+        "trolleys"
+      ]
+    },
+    {
+      "name": "Hotelguard",
+      "image": "",
+      "file": "/catalogues/demo/hotelguard.pdf",
+      "collection": "minibar-safe-lockers",
+      "subCollections": []
+    },
+    {
+      "name": "Linnea Textiles",
+      "image": "",
+      "file": "/catalogues/demo/linnea-textiles.pdf",
+      "collection": "linen",
+      "subCollections": [
+        "tableware"
+      ]
+    },
+    {
+      "name": "Suite & Thread",
+      "image": "",
+      "file": "/catalogues/demo/suite-and-thread.pdf",
+      "collection": "linen",
+      "subCollections": []
+    },
+    {
+      "name": "Damask Royale",
+      "image": "",
+      "file": "/catalogues/demo/damask-royale.pdf",
+      "collection": "linen",
+      "subCollections": []
+    }
+  ]
+}
