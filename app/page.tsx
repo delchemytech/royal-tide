@@ -208,7 +208,7 @@ export default function HomePage() {
 
           <div className="mt-12 flex justify-center">
             <ActionLink href="/collections" variant="gold" className="group">
-              View All 10 Collections & Brand Catalogues
+              View All Collections
               <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
             </ActionLink>
           </div>
