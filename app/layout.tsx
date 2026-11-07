@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   title: "Royal Tide General Trading LLC SPC",
   description: "UAE supplier of commercial-grade hospitality operating supplies.",
   icons: {
-    icon: "/favicon-rt.jpg",
-    shortcut: "/favicon-rt.jpg",
-    apple: "/favicon-rt.jpg",
+    icon: "/favicon-rt.png",
+    shortcut: "/favicon-rt.png",
+    apple: "/favicon-rt.png",
   },
 };
 
