@@ -315,6 +315,27 @@
       "file": "https://drive.google.com/file/d/1e6RjTsYVNucNQxDVDFQBuxne7sOYCSbz/view",
       "collection": "minibar-safe-lockers",
       "subCollections": []
+    },
+    {
+      "name": "Listino Luxury",
+      "image": "/catalogues/images/30-listino-luxury-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1643IiJKunPPngMiE1_080S9OC-PnMZWl/view",
+      "collection": "kitchen-utensils",
+      "subCollections": []
+    },
+    {
+      "name": "Listino Butchery",
+      "image": "/catalogues/images/31-listino-butchery-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1l5h14VCnKW85qIEg6VL0pgiLBhT46dFy/view",
+      "collection": "kitchen-utensils",
+      "subCollections": []
+    },
+    {
+      "name": "Listino Horeca",
+      "image": "/catalogues/images/32-listino-horeca-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1BjeEnG1ssUmWq4MDBH0PYfk6AzCH1PZG/view",
+      "collection": "kitchen-utensils",
+      "subCollections": []
     }
   ]
 }

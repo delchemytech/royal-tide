@@ -187,6 +187,25 @@ All paths are under public/catalogues/
     CHK : OK
 
 
+30  Kitchen Utensils | LISTINO LUXURY (Euroceppi) | Kitchen utensils
+    IMG : images/30-listino-luxury-kitchen-utensils.jpeg   (was 10.29.53 PM, 2026-11-09)
+    PDF : listino_2026-luxury.pdf
+    SEEN: Sliced steak on slate/wood serving board, Euroceppi logo
+    CHK : NOTE - PDF cover has no photo; image paired by content.
+
+31  Kitchen Utensils | LISTINO BUTCHERY (Euroceppi) | Kitchen utensils
+    IMG : images/31-listino-butchery-kitchen-utensils.jpeg   (was 10.29.53 PM (1), 2026-11-09)
+    PDF : listino_2026-butchery.pdf
+    SEEN: Butcher block with meat and cleaver (same photo as PDF cover)
+    CHK : OK
+
+32  Kitchen Utensils | LISTINO HORECA (Euroceppi) | Kitchen utensils
+    IMG : images/32-listino-horeca-kitchen-utensils.jpeg   (was 10.31.54 PM, 2026-11-09)
+    PDF : listino_2026-horeca.pdf
+    SEEN: Grid of 8 wooden cutting boards
+    CHK : NOTE - PDF cover shows a green board; image paired by content.
+
+
 SUMMARY
 -------
 29 entries = 29 images = 27 PDFs + 2 anyflip links (lines 24, 25).
