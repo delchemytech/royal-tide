@@ -1,11 +1,11 @@
 {
-  "_readme": "Collections are listed in display order. Each brand appears ONLY on the page of its `collection`. `subCollections` are display labels on the card (other ranges the catalogue covers). Collection `image` is used for both the /collections card and the collection page header. Leave any `image` empty for a placeholder. `file` is the catalogue PDF path under /public (e.g. /catalogues/brand.pdf); leave empty to show 'Catalogue coming soon'.",
+  "_readme": "Collections are listed in display order. Each brand appears ONLY on the page of its `collection`. `subCollections` are display labels on the card (other ranges the catalogue covers): use a collection slug to show that collection's title, or any free text (e.g. \"Accessories\"). Collection `image` is used for both the /collections card and the collection page header. Leave any `image` empty for a placeholder. `file` is the catalogue link: a path under /public (e.g. /catalogues/brand.pdf) or a full URL (e.g. Google Drive / anyflip); leave empty to show 'Catalogue coming soon'.",
   "collections": [
     {
       "slug": "tableware",
       "title": "Tableware",
       "description": "Bone china, premium porcelain and artisanal pieces composed for memorable service.",
-      "image": "/catogory1.jpg"
+      "image": "/tableware.jpg"
     },
     {
       "slug": "flatware",
@@ -21,7 +21,7 @@
     },
     {
       "slug": "kitchen-utensils",
-      "title": "Kitchen Utensils",
+      "title": "Cookware & Kitchen Utensils",
       "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, and prep essentials.",
       "image": "/catogory5.jpg"
     },
@@ -29,31 +29,31 @@
       "slug": "buffet",
       "title": "Buffet",
       "description": "Chafing dishes, risers, display systems and buffet service accessories.",
-      "image": ""
+      "image": "/collection-buffet.jpg"
     },
     {
       "slug": "trolleys",
       "title": "Trolleys",
       "description": "Room service, housekeeping, banqueting and service trolleys.",
-      "image": ""
+      "image": "/collection-trolleys.jpg"
     },
     {
       "slug": "table-lights",
       "title": "Table Lights",
       "description": "Cordless and decorative table lighting for restaurants, terraces and events.",
-      "image": ""
+      "image": "/collection-table-lights.jpg"
     },
     {
       "slug": "bar-equipment",
       "title": "Bar Equipment",
       "description": "Bar tools, shakers, ice service and back-bar essentials.",
-      "image": ""
+      "image": "/collection-bar-equipment.jpg"
     },
     {
       "slug": "minibar-safe-lockers",
       "title": "Mini Bar & Safe Lockers",
       "description": "In-room minibars and electronic safe lockers for hotels and serviced apartments.",
-      "image": ""
+      "image": "/collection-minibar-safe-lockers.jpg"
     },
     {
       "slug": "linen",
@@ -64,265 +64,284 @@
   ],
   "brands": [
     {
-      "name": "Aurelia Porcelain",
-      "image": "",
-      "file": "/catalogues/demo/aurelia-porcelain.pdf",
+      "name": "Le Coq",
+      "image": "/catalogues/images/01-le-coq-tableware.jpeg",
+      "file": "https://drive.google.com/file/d/1AiKmHvohLwhaMxnwCiWJ501fwZF01wIX/view",
       "collection": "tableware",
       "subCollections": [
-        "buffet"
+        "flatware",
+        "Accessories"
       ]
     },
     {
-      "name": "Maison Calder",
-      "image": "",
-      "file": "/catalogues/demo/maison-calder.pdf",
+      "name": "Tuxton",
+      "image": "/catalogues/images/02-tuxton-tableware.jpeg",
+      "file": "https://drive.google.com/file/d/1Dkqwjtwok7ohUODGzFVRWqReJCajCnh0/view",
+      "collection": "tableware",
+      "subCollections": [
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Matgusto",
+      "image": "/catalogues/images/03-matgusto-tableware.jpeg",
+      "file": "https://drive.google.com/file/d/1ggIWXu4PDFlcP2ksM2GzNiz_GEvOdGbp/view",
+      "collection": "tableware",
+      "subCollections": [
+        "Buffetware",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Robbe & Berking Silber",
+      "image": "/catalogues/images/04-robbe-berking-silber-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1XKB-Qgf15DaRW0LhY3hC_5cx-eqeU7Sw/view",
+      "collection": "flatware",
+      "subCollections": [
+        "Barware"
+      ]
+    },
+    {
+      "name": "La Tavola",
+      "image": "/catalogues/images/05-la-tavola-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1YsgRMVZOfjQqpVshy6sscD6QNebk5kgn/view",
+      "collection": "flatware",
+      "subCollections": []
+    },
+    {
+      "name": "Pintinox",
+      "image": "/catalogues/images/06-pintinox-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1fU-kuEgET_MV7Y_1rH08wTAENiBO6CkR/view",
+      "collection": "flatware",
+      "subCollections": []
+    },
+    {
+      "name": "Pintinox Luxury",
+      "image": "/catalogues/images/07-pintinox-luxury-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1o-NWXWPMybQ4Mzrb03og69hFk0w2GjjG/view",
+      "collection": "flatware",
+      "subCollections": []
+    },
+    {
+      "name": "Gusto Cam",
+      "image": "/catalogues/images/08-gusto-cam-glassware.jpeg",
+      "file": "https://drive.google.com/file/d/15-57fV4SDzr1ewnyr4FxwEzzbnhHiRCk/view",
+      "collection": "glassware",
+      "subCollections": []
+    },
+    {
+      "name": "ArdaCam",
+      "image": "/catalogues/images/09-ardacam-glassware.jpeg",
+      "file": "https://drive.google.com/file/d/1cSF9QkB4PgOk3coeS_6rYkEYfHMxQe1n/view",
+      "collection": "glassware",
+      "subCollections": []
+    },
+    {
+      "name": "ILSA",
+      "image": "/catalogues/images/10-ilsa-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1kTTJRSkZ8raCR50NhtMbYoeQP13qnCHl/view",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Browne",
+      "image": "/catalogues/images/11-browne-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1byYHje1ztsTORFo1IKQA6tjVkzZQhGyr/view",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "Cutlery",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Tuxton",
+      "image": "/catalogues/images/12-tuxton-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1KqWxZoIY7pCE-Wblwy-yKOipyhO9WEQ3/view",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "Accessories"
+      ]
+    },
+    {
+      "name": "ABM",
+      "image": "/catalogues/images/13-abm-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1oBevDuZXpP9YTSbPwD7Jc0yJea0Kr0Cb/view",
+      "collection": "kitchen-utensils",
+      "subCollections": [
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Pintinox",
+      "image": "/catalogues/images/14-pintinox-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1uL7cfWmFUKyXqxAaSiP3V5WjAjlXch2T/view",
+      "collection": "kitchen-utensils",
+      "subCollections": []
+    },
+    {
+      "name": "Matgusto",
+      "image": "/catalogues/images/15-matgusto-buffet.jpeg",
+      "file": "https://drive.google.com/file/d/1zloLrNV7GpNZaT6qeta-F6o9Pu3euKgN/view",
+      "collection": "buffet",
+      "subCollections": [
+        "Buffet Elevations & Crockery",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "La Tavola",
+      "image": "/catalogues/images/16-la-tavola-buffet-elevations.jpeg",
+      "file": "https://drive.google.com/file/d/1zAlZF4RDPOh6bCjAp2W9StKm0RI6Nrxr/view",
+      "collection": "buffet",
+      "subCollections": [
+        "Buffet Elevations"
+      ]
+    },
+    {
+      "name": "Pintinox",
+      "image": "/catalogues/images/17-pintinox-buffet.jpeg",
+      "file": "https://drive.google.com/file/d/1tpJqGLrF-x2bPWCys6hCRv2pzhy4Qq61/view",
+      "collection": "buffet",
+      "subCollections": [
+        "Buffet Elevations"
+      ]
+    },
+    {
+      "name": "CFS",
+      "image": "/catalogues/images/18-cfs-tableware.jpeg",
+      "file": "https://drive.google.com/file/d/1va3ecqYUfN7K8X1pEsFLLo_RfR4FUX9f/view",
+      "collection": "tableware",
+      "subCollections": [
+        "Melamine Crockery",
+        "glassware",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Caddie",
+      "image": "/catalogues/images/19-caddie-trolleys.jpeg",
+      "file": "https://drive.google.com/file/d/1mlx2G_LbN3EXgFOdCxKm1H8cuxWjF9b5/view",
+      "collection": "trolleys",
+      "subCollections": [
+        "Front Office",
+        "Room Dining",
+        "Housekeeping"
+      ]
+    },
+    {
+      "name": "Impulse",
+      "image": "/catalogues/images/20-impulse-polycarbonate-glassware.jpeg",
+      "file": "https://drive.google.com/file/d/1gDtwE4VXLbGr-zXYiGyd8VvUAJ7El8Mz/view",
+      "collection": "glassware",
+      "subCollections": [
+        "Polycarbonate Glassware"
+      ]
+    },
+    {
+      "name": "Impulse",
+      "image": "/catalogues/images/21-impulse-tableware.jpeg",
+      "file": "https://drive.google.com/file/d/1u_eX1BjQzxLT6JDoQrh-1PkYIydt3fyb/view",
       "collection": "tableware",
       "subCollections": [
         "glassware",
-        "flatware"
+        "Accessories"
       ]
     },
     {
-      "name": "Stoneleaf Ceramics",
-      "image": "",
-      "file": "/catalogues/demo/stoneleaf-ceramics.pdf",
-      "collection": "tableware",
-      "subCollections": []
-    },
-    {
-      "name": "Verano Bone China",
-      "image": "",
-      "file": "/catalogues/demo/verano-bone-china.pdf",
-      "collection": "tableware",
-      "subCollections": [
-        "linen"
-      ]
-    },
-    {
-      "name": "Kiln & Co",
-      "image": "",
-      "file": "/catalogues/demo/kiln-and-co.pdf",
-      "collection": "tableware",
-      "subCollections": []
-    },
-    {
-      "name": "Hartwell Steel",
-      "image": "",
-      "file": "/catalogues/demo/hartwell-steel.pdf",
-      "collection": "flatware",
-      "subCollections": [
-        "buffet",
-        "kitchen-utensils"
-      ]
-    },
-    {
-      "name": "Lumière Couverts",
-      "image": "",
-      "file": "/catalogues/demo/lumi-re-couverts.pdf",
-      "collection": "flatware",
-      "subCollections": []
-    },
-    {
-      "name": "Northgate Silversmiths",
-      "image": "",
-      "file": "/catalogues/demo/northgate-silversmiths.pdf",
-      "collection": "flatware",
-      "subCollections": [
-        "bar-equipment"
-      ]
-    },
-    {
-      "name": "Cristallo Bianco",
-      "image": "",
-      "file": "/catalogues/demo/cristallo-bianco.pdf",
-      "collection": "glassware",
-      "subCollections": [
-        "bar-equipment"
-      ]
-    },
-    {
-      "name": "Clearwater Glass",
-      "image": "",
-      "file": "/catalogues/demo/clearwater-glass.pdf",
-      "collection": "glassware",
-      "subCollections": []
-    },
-    {
-      "name": "Vetro Fino",
-      "image": "",
-      "file": "/catalogues/demo/vetro-fino.pdf",
-      "collection": "glassware",
-      "subCollections": [
-        "tableware"
-      ]
-    },
-    {
-      "name": "Ember Kitchen Pro",
-      "image": "",
-      "file": "/catalogues/demo/ember-kitchen-pro.pdf",
-      "collection": "kitchen-utensils",
-      "subCollections": [
-        "buffet"
-      ]
-    },
-    {
-      "name": "ChefLine Industrial",
-      "image": "",
-      "file": "/catalogues/demo/chefline-industrial.pdf",
-      "collection": "kitchen-utensils",
-      "subCollections": []
-    },
-    {
-      "name": "Forgecraft",
-      "image": "",
-      "file": "/catalogues/demo/forgecraft.pdf",
-      "collection": "kitchen-utensils",
-      "subCollections": [
-        "flatware"
-      ]
-    },
-    {
-      "name": "Grand Banquet Systems",
-      "image": "",
-      "file": "/catalogues/demo/grand-banquet-systems.pdf",
+      "name": "La Tavola",
+      "image": "/catalogues/images/22-la-tavola-buffet-stations.jpeg",
+      "file": "https://drive.google.com/file/d/1O3_5TkC4u0GnHshqVqA7zgvKUbmk3VR0/view",
       "collection": "buffet",
       "subCollections": [
-        "trolleys"
+        "Buffet Stations",
+        "Banquet Tables & Elevations"
       ]
     },
     {
-      "name": "Chafer House",
-      "image": "",
-      "file": "/catalogues/demo/chafer-house.pdf",
-      "collection": "buffet",
-      "subCollections": []
-    },
-    {
-      "name": "Display Atelier",
-      "image": "",
-      "file": "/catalogues/demo/display-atelier.pdf",
-      "collection": "buffet",
-      "subCollections": [
-        "tableware"
-      ]
-    },
-    {
-      "name": "Concierge Carts",
-      "image": "",
-      "file": "/catalogues/demo/concierge-carts.pdf",
-      "collection": "trolleys",
-      "subCollections": [
-        "minibar-safe-lockers"
-      ]
-    },
-    {
-      "name": "Roomline Trolleys",
-      "image": "",
-      "file": "/catalogues/demo/roomline-trolleys.pdf",
-      "collection": "trolleys",
-      "subCollections": []
-    },
-    {
-      "name": "Valet Mobility",
-      "image": "",
-      "file": "/catalogues/demo/valet-mobility.pdf",
-      "collection": "trolleys",
-      "subCollections": [
-        "buffet"
-      ]
-    },
-    {
-      "name": "Lanterna Lights",
-      "image": "",
-      "file": "/catalogues/demo/lanterna-lights.pdf",
+      "name": "Sompex",
+      "image": "/catalogues/images/23-sompex-table-lights.jpeg",
+      "file": "https://drive.google.com/file/d/1wC2nOXnYhyHE6Qp6_xq0hxtJ-L9w4SbA/view",
       "collection": "table-lights",
       "subCollections": []
     },
     {
-      "name": "Glow Terrace",
-      "image": "",
-      "file": "/catalogues/demo/glow-terrace.pdf",
-      "collection": "table-lights",
-      "subCollections": [
-        "bar-equipment"
-      ]
-    },
-    {
-      "name": "Candela Cordless",
-      "image": "",
-      "file": "/catalogues/demo/candela-cordless.pdf",
-      "collection": "table-lights",
+      "name": "Impulse",
+      "image": "/catalogues/images/24-impulse-glassware.jpeg",
+      "file": "https://online.anyflip.com/rrca/wrmc/mobile/",
+      "collection": "glassware",
       "subCollections": []
     },
     {
-      "name": "Barcraft Tools",
-      "image": "",
-      "file": "/catalogues/demo/barcraft-tools.pdf",
-      "collection": "bar-equipment",
+      "name": "Impulse",
+      "image": "/catalogues/images/25-impulse-melamine-tableware.jpeg",
+      "file": "https://online.anyflip.com/rrca/cgkw/mobile/",
+      "collection": "tableware",
       "subCollections": [
-        "glassware"
+        "Melamine Tableware",
+        "Polycarbonate Glassware"
       ]
     },
     {
-      "name": "Mixology Works",
-      "image": "",
-      "file": "/catalogues/demo/mixology-works.pdf",
+      "name": "Santos",
+      "image": "/catalogues/images/26-santos-bar-equipment.jpeg",
+      "file": "https://drive.google.com/file/d/1PPe_3KXM58ynQt_FElfpAM_FZ22iOX4k/view",
+      "collection": "bar-equipment",
+      "subCollections": [
+        "Bar Blenders",
+        "Coffee Machines"
+      ]
+    },
+    {
+      "name": "Impulse",
+      "image": "/catalogues/images/27-impulse-amenities.jpeg",
+      "file": "https://drive.google.com/file/d/1VvSIK1qv2NWB8XC795rZEu9X8F5zzoHV/view",
+      "collection": "tableware",
+      "subCollections": [
+        "Amenities"
+      ]
+    },
+    {
+      "name": "Robbe & Berking",
+      "image": "/catalogues/images/28-robbe-berking-barware.jpeg",
+      "file": "https://drive.google.com/file/d/1Jv77nkAJaBnguc--zUJWpGnzfdzmt8T2/view",
       "collection": "bar-equipment",
       "subCollections": []
     },
     {
-      "name": "Icewell Service",
-      "image": "",
-      "file": "/catalogues/demo/icewell-service.pdf",
-      "collection": "bar-equipment",
-      "subCollections": [
-        "buffet"
-      ]
-    },
-    {
-      "name": "Coolsuite Minibars",
-      "image": "",
-      "file": "/catalogues/demo/coolsuite-minibars.pdf",
+      "name": "Indel B",
+      "image": "/catalogues/images/29-indel-b-minibar-safe-lockers.jpeg",
+      "file": "https://drive.google.com/file/d/1e6RjTsYVNucNQxDVDFQBuxne7sOYCSbz/view",
       "collection": "minibar-safe-lockers",
       "subCollections": []
     },
     {
-      "name": "Securo Safes",
-      "image": "",
-      "file": "/catalogues/demo/securo-safes.pdf",
-      "collection": "minibar-safe-lockers",
-      "subCollections": [
-        "trolleys"
-      ]
-    },
-    {
-      "name": "Hotelguard",
-      "image": "",
-      "file": "/catalogues/demo/hotelguard.pdf",
-      "collection": "minibar-safe-lockers",
+      "name": "Listino Luxury",
+      "image": "/catalogues/images/30-listino-luxury-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1643IiJKunPPngMiE1_080S9OC-PnMZWl/view",
+      "collection": "kitchen-utensils",
       "subCollections": []
     },
     {
-      "name": "Linnea Textiles",
-      "image": "",
-      "file": "/catalogues/demo/linnea-textiles.pdf",
-      "collection": "linen",
-      "subCollections": [
-        "tableware"
-      ]
-    },
-    {
-      "name": "Suite & Thread",
-      "image": "",
-      "file": "/catalogues/demo/suite-and-thread.pdf",
-      "collection": "linen",
+      "name": "Listino Butchery",
+      "image": "/catalogues/images/31-listino-butchery-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1l5h14VCnKW85qIEg6VL0pgiLBhT46dFy/view",
+      "collection": "kitchen-utensils",
       "subCollections": []
     },
     {
-      "name": "Damask Royale",
-      "image": "",
-      "file": "/catalogues/demo/damask-royale.pdf",
-      "collection": "linen",
+      "name": "Listino Horeca",
+      "image": "/catalogues/images/32-listino-horeca-kitchen-utensils.jpeg",
+      "file": "https://drive.google.com/file/d/1BjeEnG1ssUmWq4MDBH0PYfk6AzCH1PZG/view",
+      "collection": "kitchen-utensils",
+      "subCollections": []
+    },
+    {
+      "name": "Eternum",
+      "image": "/catalogues/images/33-eternum-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1MX4oqtOBqZaIfxqSFc3NPAzFYqgumNOH/view",
+      "collection": "flatware",
       "subCollections": []
     }
   ]

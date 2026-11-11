@@ -144,7 +144,7 @@
   "categoryCards": [
     {
       "id": "tableware",
-      "name": "Crockery & Tableware",
+      "name": "Tableware",
       "description": "Bone china, premium porcelain and artisanal pieces composed for memorable service.",
       "image": "tableware",
       "alt": "White porcelain plates and bowls arranged on a restaurant table",
@@ -152,12 +152,12 @@
       "productCount": 8
     },
     {
-      "id": "cutlery",
-      "name": "Cutlery & Flatware",
+      "id": "flatware",
+      "name": "Flatware",
       "description": "Polished and matte 18/10 stainless steel selected for balance, finish and durability.",
       "image": "cutlery",
       "alt": "Stainless steel cutlery set on a dining table",
-      "href": "/collections/cutlery",
+      "href": "/collections/flatware",
       "productCount": 7
     },
     {
@@ -170,21 +170,12 @@
       "productCount": 7
     },
     {
-      "id": "linen",
-      "name": "Table & Suite Linens",
-      "description": "Textured napkins, runners, bed and bath linens tailored to demanding hotel use.",
-      "image": "linen",
-      "alt": "Hotel bedroom with crisp white bed linen and folded towels",
-      "href": "/collections/linen",
-      "productCount": 8
-    },
-    {
-      "id": "cookware",
-      "name": "Commercial Cookware & Kitchen Utensils",
+      "id": "kitchen-utensils",
+      "name": "Cookware & Kitchen Utensils",
       "description": "Heavy-duty culinary stock pots, stainless steel pans, professional chef utensils, and prep essentials.",
       "image": "cookware",
       "alt": "Heavy-duty commercial stainless steel cookware on a dark stone countertop",
-      "href": "/collections/cookware",
+      "href": "/collections/kitchen-utensils",
       "productCount": 6
     }
   ],

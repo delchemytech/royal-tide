@@ -1,0 +1,226 @@
+CATALOGUE MAPPING  -  text  /  image  /  PDF
+=============================================
+Order matches "catlogue details.txt" line by line (01-29).
+All paths are under public/catalogues/
+  IMG  = images/<file>  (original WhatsApp names in images/images-metadata.json)
+  PDF  = catalogue file (or LINK for anyflip entries)
+  SEEN = what the image actually shows (checked visually)
+  CHK  = OK if text, image and PDF agree; NOTE if something needs a look
+
+
+01  Tableware | LE COQ | Tableware, Flatware, Accessories
+    IMG : images/01-le-coq-tableware.jpeg   (was 12.52.35 AM)
+    PDF : LE COQ PORCELAINE 2026 Catalogue.pdf
+    SEEN: Plated dish on dark plate, porcelain bust, Le Coq logo
+    CHK : OK
+
+02  Tableware | TUXTON | Tableware, Accessories
+    IMG : images/02-tuxton-tableware.jpeg   (was 12.54.59 AM)
+    PDF : Catalog_Vol_35-150dpi-r4.pdf
+    SEEN: White plates, bowls and cups on grey stone
+    CHK : OK
+
+03  Tableware | MATGUSTO | Tableware, Buffetware, Accessories
+    IMG : images/03-matgusto-tableware.jpeg   (was 12.58.24 AM)
+    PDF : MATGusto Catalog 2026.pdf
+    SEEN: Marble-look plates and bowls
+    CHK : OK
+
+04  Flatware | ROBBE & BERKING SILBER | Flatware, Barware
+    IMG : images/04-robbe-berking-silber-flatware.jpeg   (was 1.01.03 AM)
+    PDF : Robbe & Berking Silber- 2025 Catalogue.pdf
+    SEEN: Ribbed-handle cutlery set, "Robbe & Berking" on knife
+    CHK : OK
+
+05  Flatware | LA TAVOLA | Flatware
+    IMG : images/05-la-tavola-flatware.jpeg   (was 1.07.32 AM)
+    PDF : la_tavola_flatware_tableware_2026.pdf
+    SEEN: Polished cutlery on linen napkin
+    CHK : OK
+
+06  Flatware | PINTINOX | Flatware
+    IMG : images/06-pintinox-flatware.jpeg   (was 1.12.47 AM)
+    PDF : PINTINOX-HORECA 2025.pdf
+    SEEN: Hammered-handle fork and spoon, blue table setting
+    CHK : OK
+
+07  Flatware | PINTINOX LUXURY | Flatware
+    IMG : images/07-pintinox-luxury-flatware.jpeg   (was 1.15.54 AM)
+    PDF : PINTINOX LUXURY 2025.pdf
+    SEEN: Gold cutlery, gold-rim plate
+    CHK : OK
+
+08  Glassware | GUSTO CAM | Glassware
+    IMG : images/08-gusto-cam-glassware.jpeg   (was 1.19.15 AM)
+    PDF : Gusto Cam Katalog 2025.pdf
+    SEEN: Coupe glasses and rocks glass with cocktails
+    CHK : OK
+
+09  Glassware | ARDACAM  (txt says "Ardacan") | Glassware
+    IMG : images/09-ardacam-glassware.jpeg   (was 1.36.04 AM)
+    PDF : ArdaCam 2026 (1).pdf
+    SEEN: Blue-rim glass serving bowl with salad
+    CHK : OK  (brand name spelling: ArdaCam)
+
+10  Kitchen Utensils | ILSA | Kitchen utensils, Accessories
+    IMG : images/10-ilsa-kitchen-utensils.jpeg   (was 1.55.38 AM)
+    PDF : ILSA 2026 Catalogue.pdf
+    SEEN: Stainless stock pot, ladle, saucepan
+    CHK : OK
+
+11  Kitchen Utensils | BROWNE | Kitchen utensils, Cutlery, Accessories
+    IMG : images/11-browne-kitchen-utensils.jpeg   (was 2.03.30 AM)
+    PDF : Browne Foodservice USA.pdf
+    SEEN: Black & white professional kitchen
+    CHK : OK
+
+12  Kitchen Utensils | TUXTON | Kitchen utensils, Accessories
+    IMG : images/12-tuxton-kitchen-utensils.jpeg   (was 2.11.54 AM)
+    PDF : Tuxton_Pro_Cookware_Catalog_Vol_35-150dpi-r4.pdf
+    SEEN: Flambe in a stainless pan
+    CHK : OK
+
+13  Kitchen Utensils | ABM | Kitchen utensils, Accessories
+    IMG : images/13-abm-kitchen-utensils.jpeg   (was 2.17.50 AM)
+    PDF : ABM 2026.pdf
+    SEEN: Dark pans and dishes with brass handles
+    CHK : OK
+
+14  Kitchen Utensils | PINTINOX | Kitchen utensils
+    IMG : images/14-pintinox-kitchen-utensils.jpeg   (was 2.21.57 AM)
+    PDF : Pintinox Pots and Pans.pdf
+    SEEN: Chef seasoning food in black non-stick pans
+    CHK : OK
+
+15  Buffet | MATGUSTO  (txt says "Mutgusto") | Buffet elevations & crockery, Accessories
+    IMG : images/15-matgusto-buffet.jpeg   (was 2.29.29 AM)
+    PDF : MATGusto Catalog 2026 (1).pdf
+    SEEN: Wood/marble buffet risers with marble-look bowls
+    CHK : NOTE - this PDF is the same size as line 03's PDF
+          (43,916,454 bytes), so it is probably a duplicate.
+          One file could serve both entries.
+
+16  Buffet | LA TAVOLA | Buffet elevations
+    IMG : images/16-la-tavola-buffet-elevations.jpeg   (was 2.33.54 AM)
+    PDF : CORE by La Tavola Catalogue 2026.pdf
+    SEEN: White slatted modular risers joined by glass shelves
+    CHK : OK
+
+17  Buffet | PINTINOX | Buffet elevations
+    IMG : images/17-pintinox-buffet.jpeg   (was 2.38.26 AM)
+    PDF : PINITINOX BUFFET CALEIDO 2025.pdf
+    SEEN: Buffet display with roll-top cover, "Pintinox" on unit
+    CHK : OK  (file name typo "PINITINOX")
+
+18  Tableware | CFS | Melamine crockery, Glassware, Accessories
+    IMG : images/18-cfs-tableware.jpeg   (was 2.42.26 AM)
+    PDF : 2025 CFS Brands Catalog.pdf
+    SEEN: White melamine bowls and platters
+    CHK : OK
+
+19  Trolleys | CADDIE | Front office, Room dining, Housekeeping
+    IMG : images/19-caddie-trolleys.jpeg   (was 2.46.16 AM)
+    PDF : Caddie -Catalogue 2026.pdf
+    SEEN: Brass luggage trolley, red carpet base
+    CHK : OK
+
+20  Glassware | IMPULSE | Polycarbonate glassware
+    IMG : images/20-impulse-polycarbonate-glassware.jpeg   (was 2.49.19 AM)
+    PDF : No-border-Unbreakable-Catalog.pdf
+    SEEN: Poolside cocktail in clear tumbler
+    CHK : OK
+
+21  Tableware | IMPULSE | Tableware, Glassware, Accessories
+    IMG : images/21-impulse-tableware.jpeg   (was 2.51.23 AM)
+    PDF : Impulse-High-Res-Catalog-2026.pdf
+    SEEN: White organic stone-shaped plates
+    CHK : OK
+
+22  Buffet | LA TAVOLA | Buffet stations, Banquet tables & Elevations
+    IMG : images/22-la-tavola-buffet-stations.jpeg   (was 2.54.48 AM)
+    PDF : MASTER-DECK-BY-LA-TAVOLA.pdf
+    SEEN: Marble/wood buffet station counters with heat lamps
+    CHK : OK
+
+23  Table Lights | SOMPEX | Table lights
+    IMG : images/23-sompex-table-lights.jpeg   (was 2.58.03 AM)
+    PDF : Impulse-Lighting-Catalog.pdf   (you confirmed this)
+    SEEN: Cordless copper table lamp under water splash
+    CHK : OK  (brand is Sompex, file is named Impulse)
+
+24  Glassware | IMPULSE | Glassware
+    IMG : images/24-impulse-glassware.jpeg   (was 3.01.33 AM)
+    PDF : LINK  https://online.anyflip.com/rrca/wrmc/mobile/
+    SEEN: Row of stemware and a tumbler
+    CHK : OK  (no PDF, uses the link)
+
+25  Tableware | IMPULSE | Melamine tableware, Polycarbonate glassware
+    IMG : images/25-impulse-melamine-tableware.jpeg   (was 3.06.45 AM)
+    PDF : LINK  https://online.anyflip.com/rrca/cgkw/mobile/
+    SEEN: Blue speckled melamine bowls, "impulseenterprises.com" watermark
+    CHK : OK  (no PDF, uses the link)
+
+26  Bar Equipment | SANTOS | Bar blenders, Coffee machines, Tableware, Flatware, Glassware
+    IMG : images/26-santos-bar-equipment.jpeg   (was 3.12.09 AM)
+    PDF : SANTOS_GENERAL_CATALOGUE_A4_2026.pdf
+    SEEN: Santos blenders and drink mixer on a bar counter
+    CHK : OK
+
+27  Tableware | IMPULSE | Amenities
+    IMG : images/27-impulse-amenities.jpeg   (was 3.17.11 AM)
+    PDF : IMPULSE-Amentities-Made-Easy-Booklet.pdf
+    SEEN: Glass cloche over chocolate strawberries, red candle holder
+    CHK : NOTE - the image doesn't obviously look like "amenities".
+          Order and timing still fit, so it is probably right,
+          but please check against the booklet.
+
+28  Bar Equipment | ROBBE & BERKING | Bar equipment
+    IMG : images/28-robbe-berking-barware.jpeg   (was 3.21.22 AM)
+    PDF : Robbe & Berking Barware- 2025 Catalogue (1).pdf   (named in txt)
+    SEEN: Silver bar set: ice bucket, flutes, cups, cocktail glasses
+    CHK : OK
+
+29  Mini Bar & Safe Lockers | INDEL B | Mini bars, Safe lockers
+    IMG : images/29-indel-b-minibar-safe-lockers.jpeg   (was 3.25.20 AM)
+    PDF : 2026_INDELB_HOSPITALITY_CATALOGO_DIGITAL_EN-IT-FR.pdf   (named in txt)
+    SEEN: Black hotel minibar, door open, "indel B" logo
+    CHK : OK
+
+
+30  Kitchen Utensils | LISTINO LUXURY (Euroceppi) | Kitchen utensils
+    IMG : images/30-listino-luxury-kitchen-utensils.jpeg   (was 10.29.53 PM, 2026-11-09)
+    PDF : listino_2026-luxury.pdf
+    SEEN: Sliced steak on slate/wood serving board, Euroceppi logo
+    CHK : NOTE - PDF cover has no photo; image paired by content.
+
+31  Kitchen Utensils | LISTINO BUTCHERY (Euroceppi) | Kitchen utensils
+    IMG : images/31-listino-butchery-kitchen-utensils.jpeg   (was 10.29.53 PM (1), 2026-11-09)
+    PDF : listino_2026-butchery.pdf
+    SEEN: Butcher block with meat and cleaver (same photo as PDF cover)
+    CHK : OK
+
+32  Kitchen Utensils | LISTINO HORECA (Euroceppi) | Kitchen utensils
+    IMG : images/32-listino-horeca-kitchen-utensils.jpeg   (was 10.31.54 PM, 2026-11-09)
+    PDF : listino_2026-horeca.pdf
+    SEEN: Grid of 8 wooden cutting boards
+    CHK : NOTE - PDF cover shows a green board; image paired by content.
+
+
+33  Flatware | ETERNUM | Cutlery
+    IMG : images/33-eternum-flatware.jpeg   (was 1.21.05 AM, 2026-11-10)
+    PDF : Catalogue Eternum 2026 format A4.pdf
+    SEEN: Knife, fork and spoon (stonewashed finish) beside a glass of tartare
+    CHK : OK
+
+
+SUMMARY
+-------
+29 entries = 29 images = 27 PDFs + 2 anyflip links (lines 24, 25).
+PDF order (by time saved) matches the txt for lines 01-27; the
+Robbe & Berking Barware PDF was saved last but belongs to line 28.
+
+Items to look at:
+  - Line 15: MATGusto "(1)" PDF looks like a duplicate of line 03's PDF.
+  - Line 27: image doesn't obviously show amenities, please confirm.
+  - Spelling in txt: "Ardacan" -> ArdaCam, "Mutgusto" -> Matgusto.
+  - No brands are listed for the Linen collection.

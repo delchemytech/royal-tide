@@ -63,7 +63,7 @@ export function CollectionBrandsPage({ collection }: { collection: Collection })
           {brands.length > 0 ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {brands.map((brand, i) => (
-                <Reveal key={brand.name} delay={i * 60}>
+                <Reveal key={`${brand.name}-${i}`} delay={i * 60}>
                   <BrandCard brand={brand} />
                 </Reveal>
               ))}
