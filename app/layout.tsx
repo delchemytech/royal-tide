@@ -27,16 +27,16 @@ const jsonLd = {
     latitude: 24.3530024,
     longitude: 54.4995434,
   },
-  openingHours: "Su-Th 09:00-18:00",
+  openingHours: "Mo-Fr 09:00-18:00",
 };
 
 export const metadata: Metadata = {
   title: "Royal Tide General Trading LLC SPC",
   description: "UAE supplier of commercial-grade hospitality operating supplies.",
   icons: {
-    icon: "/favicon-rt.jpg",
-    shortcut: "/favicon-rt.jpg",
-    apple: "/favicon-rt.jpg",
+    icon: "/favicon-rt.png",
+    shortcut: "/favicon-rt.png",
+    apple: "/favicon-rt.png",
   },
 };
 

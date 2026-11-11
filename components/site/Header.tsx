@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { collections } from "@/lib/catalogues";
 import { Logo } from "./Logo";
 
 const nav = [
@@ -15,7 +16,30 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+
+  // Collections dropdown: open on hover with a short close delay so the pointer can travel into the panel.
+  function openMenu() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setMenuOpen(true);
+  }
+  function scheduleClose() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setMenuOpen(false), 150);
+  }
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -57,6 +81,102 @@ export function Header() {
             <ul className="flex items-center gap-1 sm:gap-2">
               {nav.map((item) => {
                 const active = isActive(item.to);
+                if (item.to === "/collections") {
+                  return (
+                    <li
+                      key={item.to}
+                      className="relative flex flex-col items-center"
+                      onMouseEnter={openMenu}
+                      onMouseLeave={scheduleClose}
+                      onBlur={(e) => {
+                        if (!e.currentTarget.contains(e.relatedTarget as Node)) setMenuOpen(false);
+                      }}
+                    >
+                      <div className="flex items-center">
+                        <Link
+                          href={item.to}
+                          className={cn(
+                            "pl-4 pr-1 py-2 text-[0.85rem] font-bold transition-all duration-200 rounded-l-full",
+                            active || menuOpen ? "text-gold" : "text-navy-deep/80 hover:text-navy-deep"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => (menuOpen ? setMenuOpen(false) : openMenu())}
+                          aria-expanded={menuOpen}
+                          aria-controls="collections-menu"
+                          aria-label="Show collections"
+                          className={cn(
+                            "pr-3 pl-0.5 py-2 rounded-r-full transition-colors",
+                            active || menuOpen ? "text-gold" : "text-navy-deep/60 hover:text-navy-deep"
+                          )}
+                        >
+                          <ChevronDown
+                            size={15}
+                            className={cn("transition-transform duration-200", menuOpen && "rotate-180")}
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
+                      {active && (
+                        <span className="absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-gold" />
+                      )}
+
+                      {/* Dropdown panel (pt bridges the gap so hover isn't lost) */}
+                      <div
+                        id="collections-menu"
+                        className={cn(
+                          "absolute left-1/2 top-full -translate-x-1/2 pt-5 transition-all duration-200",
+                          menuOpen ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-1 pointer-events-none"
+                        )}
+                      >
+                        <div className="w-[34rem] overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.14)]">
+                          <div className="px-6 pt-5 pb-3">
+                            <p className="text-[0.65rem] font-bold uppercase tracking-widest text-gold">
+                              Our Collections
+                            </p>
+                          </div>
+                          <ul className="grid grid-cols-2 gap-x-2 px-3 pb-3">
+                            {collections.map((c, i) => {
+                              const href = `/collections/${c.slug}`;
+                              const current = pathname === href;
+                              return (
+                                <li key={c.slug}>
+                                  <Link
+                                    href={href}
+                                    className={cn(
+                                      "group/item flex items-center gap-3 rounded-xl px-3 py-2.5 text-[0.85rem] font-semibold transition-colors",
+                                      current ? "bg-gold/10 text-gold" : "text-navy-deep hover:bg-gold/10 hover:text-gold"
+                                    )}
+                                  >
+                                    <span className="w-5 text-[0.65rem] font-bold text-gold/70">
+                                      {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="flex-1">{c.title}</span>
+                                    <ArrowRight
+                                      size={13}
+                                      className="-translate-x-1 opacity-0 transition-all group-hover/item:translate-x-0 group-hover/item:opacity-100"
+                                      aria-hidden="true"
+                                    />
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                          <Link
+                            href="/collections"
+                            className="flex items-center justify-between border-t border-gray-100 bg-[#FAF9FC] px-6 py-3.5 text-[0.8rem] font-bold text-navy-deep transition-colors hover:text-gold"
+                          >
+                            View all collections
+                            <ArrowRight size={14} aria-hidden="true" />
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                }
                 return (
                   <li key={item.to} className="relative flex flex-col items-center">
                     <Link
@@ -171,13 +291,7 @@ export function Header() {
             <div className="mt-5 pt-5 border-t border-gray-100">
               <p className="text-[0.68rem] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Hospitality Collections</p>
               <div className="flex flex-wrap gap-2 text-xs">
-                {[
-                  { name: "Tableware", href: "/collections/tableware" },
-                  { name: "Glassware", href: "/collections/glassware" },
-                  { name: "Linen", href: "/collections/linen" },
-                  { name: "Buffet", href: "/collections/buffet" },
-                  { name: "Cutlery", href: "/collections/cutlery" },
-                ].map((cat) => (
+                {collections.map((c) => ({ name: c.title, href: `/collections/${c.slug}` })).map((cat) => (
                   <Link
                     key={cat.name}
                     href={cat.href}

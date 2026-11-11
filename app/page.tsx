@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className="overflow-hidden rounded-xl bg-muted shadow-sm">
               <div className="relative aspect-[16/9] w-full">
                 <img
-                  src="/aboutpic.jpg"
+                  src="/about-tableware.jpeg"
                   alt={home.about.imageAlt}
                   className="h-full w-full object-cover"
                 />
@@ -170,16 +170,17 @@ export default function HomePage() {
             title={home.categoriesSection.title}
             intro={home.categoriesSection.intro}
           />
-          <div className="mt-8 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-5 items-start">
+          <div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 items-start">
             {categoryCards.map((category: any, i: number) => (
               <Reveal key={category.id} delay={i * 80}>
-                <div
+                <Link
+                  href={category.href}
                   className={cn(
                     "group block h-full outline-none transition-all duration-300 hover:-translate-y-2",
                     i % 2 === 1 && "lg:mt-8"
                   )}
                 >
-                  <div className="relative aspect-square overflow-hidden bg-muted">
+                  <div className="relative aspect-square overflow-hidden bg-muted rounded-lg border border-border/40 shadow-sm">
                     <img
                       src={(images as any)[category.image]}
                       alt={category.alt}
@@ -193,14 +194,23 @@ export default function HomePage() {
                     <span className="text-[0.65rem] font-bold text-gold tracking-widest uppercase">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="mt-1.5 text-lg leading-tight text-navy-deep">{category.name}</h3>
+                    <h3 className="mt-1.5 text-lg leading-tight text-navy-deep transition-colors duration-300 group-hover:text-gold">
+                      {category.name}
+                    </h3>
                     <p className="mt-2 text-[0.8rem] leading-snug text-muted-foreground">
                       {category.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <ActionLink href="/collections" variant="gold" className="group">
+              View All Collections
+              <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </ActionLink>
           </div>
         </div>
       </section>

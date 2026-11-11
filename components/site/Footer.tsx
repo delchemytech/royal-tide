@@ -9,6 +9,7 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 const quickLinks = [
   { label: "Home", to: "/" },
   { label: "Collections", to: "/collections" },
+  { label: "Downloads", to: "/downloads" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
 

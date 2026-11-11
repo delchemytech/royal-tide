@@ -5,38 +5,71 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { SectionHeading } from "@/components/site/Section";
 import { btn } from "@/components/site/Button";
 import { cn } from "@/lib/utils";
-import { content, whatsappLink, images } from "@/lib/site";
+import { content, whatsappLink } from "@/lib/site";
+import { collections as collectionList, type Collection } from "@/lib/catalogues";
 
-const catalog = content.catalog;
 const { collections } = content;
 
-const categories = [
-  {
-    ...catalog.tableware,
-    href: "/collections/tableware",
-    count: catalog.tableware.products.length,
-  },
-  {
-    ...catalog.glassware,
-    href: "/collections/glassware",
-    count: catalog.glassware.products.length,
-  },
-  {
-    ...catalog.linen,
-    href: "/collections/linen",
-    count: catalog.linen.products.length,
-  },
-  {
-    ...catalog.buffet,
-    href: "/collections/buffet",
-    count: catalog.buffet.products.length,
-  },
-  {
-    ...catalog.cookware,
-    href: "/collections/cookware",
-    count: catalog.cookware.products.length,
-  },
-];
+// Two staggered columns, same as the original layout: even indices left, odd right.
+const indexed = collectionList.map((c, i) => ({ c, i }));
+const leftColumn = indexed.filter(({ i }) => i % 2 === 0);
+const rightColumn = indexed.filter(({ i }) => i % 2 === 1);
+// Original design: 1st card (left) and 4th card (right) use the image-overlay style; repeats every 4.
+const isOverlayCard = (i: number) => i % 4 === 0 || i % 4 === 3;
+
+function CollectionCard({ c, i }: { c: Collection; i: number }) {
+  const isOverlay = isOverlayCard(i);
+  return (
+    <Reveal delay={(i % 5) * 80}>
+      <Link
+        href={`/collections/${c.slug}`}
+        className="group block rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+      >
+        <div className={cn("relative overflow-hidden bg-mist", isOverlay ? "aspect-[4/3] lg:aspect-[1/1]" : "aspect-[3/2] lg:aspect-[16/9]")}>
+          {c.image ? (
+            <img
+              src={c.image}
+              alt={c.title}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          ) : (
+            <div
+              className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1b2a44] via-navy-deep to-[#0a1120]"
+              aria-hidden="true"
+            >
+              <img src="/logo-rt-emblem.png" alt="" className="w-1/5 opacity-15" />
+            </div>
+          )}
+          {isOverlay && (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">{c.title}</h3>
+              </div>
+            </>
+          )}
+        </div>
+        <div className="p-6 sm:p-8">
+          {!isOverlay && (
+            <div className="mb-3">
+              <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-navy-deep">{c.title}</h3>
+            </div>
+          )}
+          <p className="text-[0.85rem] sm:text-sm leading-relaxed text-muted-foreground">
+            {c.description}
+          </p>
+        </div>
+      </Link>
+    </Reveal>
+  );
+}
 
 export const metadata = {
   title: collections.seoTitle,
@@ -90,104 +123,16 @@ export default function CollectionsPage() {
           <div className="grid gap-6 sm:grid-cols-2 items-start">
             {/* Column 1 */}
             <div className="flex flex-col gap-6">
-              {[0, 2, 4].map((i) => {
-                const cat = categories[i];
-                const card = content.categoryCards[i];
-                const badgeLabel = card.name.split('&')[0].trim();
-                const isOverlay = i === 0;
-
-                return (
-                  <Reveal key={cat.id} delay={i * 80}>
-                    <div
-                      className="group block rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    >
-                      <div className={cn("relative overflow-hidden bg-mist", isOverlay ? "aspect-[4/3] lg:aspect-[1/1]" : "aspect-[3/2] lg:aspect-[16/9]")}>
-                        <img
-                          src={cat.heroImage}
-                          alt={card.name}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        {isOverlay && (
-                          <>
-                            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
-                            <div className="absolute bottom-6 left-6 right-6">
-                              <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
-                                {String(i + 1).padStart(2, '0')}
-                              </span>
-                              <h3 className="text-xl sm:text-2xl font-bold text-white">{card.name}</h3>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      <div className="p-6 sm:p-8">
-                        {!isOverlay && (
-                          <div className="mb-3">
-                            <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
-                              {String(i + 1).padStart(2, '0')}
-                            </span>
-                            <h3 className="text-xl sm:text-2xl font-bold text-navy-deep">{card.name}</h3>
-                          </div>
-                        )}
-                        <p className="text-[0.85rem] sm:text-sm leading-relaxed text-muted-foreground">
-                          {card.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
+              {leftColumn.map(({ c, i }) => (
+                <CollectionCard key={c.slug} c={c} i={i} />
+              ))}
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
-              {[1, 3].map((i) => {
-                const cat = categories[i];
-                const card = content.categoryCards[i];
-                const badgeLabel = card.name.split('&')[0].trim();
-                const isOverlay = i === 3;
-
-                return (
-                  <Reveal key={cat.id} delay={i * 80}>
-                    <div
-                      className="group block rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    >
-                      <div className={cn("relative overflow-hidden bg-mist", isOverlay ? "aspect-[4/3] lg:aspect-[1/1]" : "aspect-[3/2] lg:aspect-[16/9]")}>
-                        <img
-                          src={cat.heroImage}
-                          alt={card.name}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        {isOverlay && (
-                          <>
-                            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
-                            <div className="absolute bottom-6 left-6 right-6">
-                              <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
-                                {String(i + 1).padStart(2, '0')}
-                              </span>
-                              <h3 className="text-xl sm:text-2xl font-bold text-white">{card.name}</h3>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      <div className="p-6 sm:p-8">
-                        {!isOverlay && (
-                          <div className="mb-3">
-                            <span className="text-[0.6rem] font-bold uppercase tracking-widest text-gold block mb-2">
-                              {String(i + 1).padStart(2, '0')}
-                            </span>
-                            <h3 className="text-xl sm:text-2xl font-bold text-navy-deep">{card.name}</h3>
-                          </div>
-                        )}
-                        <p className="text-[0.85rem] sm:text-sm leading-relaxed text-muted-foreground">
-                          {card.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
+              {rightColumn.map(({ c, i }) => (
+                <CollectionCard key={c.slug} c={c} i={i} />
+              ))}
             </div>
           </div>
         </div>
