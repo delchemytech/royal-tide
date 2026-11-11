@@ -336,6 +336,13 @@
       "file": "https://drive.google.com/file/d/1BjeEnG1ssUmWq4MDBH0PYfk6AzCH1PZG/view",
       "collection": "kitchen-utensils",
       "subCollections": []
+    },
+    {
+      "name": "Eternum",
+      "image": "/catalogues/images/33-eternum-flatware.jpeg",
+      "file": "https://drive.google.com/file/d/1MX4oqtOBqZaIfxqSFc3NPAzFYqgumNOH/view",
+      "collection": "flatware",
+      "subCollections": []
     }
   ]
 }

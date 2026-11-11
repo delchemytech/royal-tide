@@ -206,6 +206,13 @@ All paths are under public/catalogues/
     CHK : NOTE - PDF cover shows a green board; image paired by content.
 
 
+33  Flatware | ETERNUM | Cutlery
+    IMG : images/33-eternum-flatware.jpeg   (was 1.21.05 AM, 2026-11-10)
+    PDF : Catalogue Eternum 2026 format A4.pdf
+    SEEN: Knife, fork and spoon (stonewashed finish) beside a glass of tartare
+    CHK : OK
+
+
 SUMMARY
 -------
 29 entries = 29 images = 27 PDFs + 2 anyflip links (lines 24, 25).

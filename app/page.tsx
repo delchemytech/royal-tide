@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className="overflow-hidden rounded-xl bg-muted shadow-sm">
               <div className="relative aspect-[16/9] w-full">
                 <img
-                  src="/aboutpic.jpg"
+                  src="/about-tableware.jpeg"
                   alt={home.about.imageAlt}
                   className="h-full w-full object-cover"
                 />
